@@ -1,0 +1,75 @@
+<div class="row">
+  <div class="col-12 col-md-6 col-lg-6 mx-auto">
+    <div class="card border-secondary container">
+      <h2 class="font-bold text-4xl text-center">Inscription</h2>
+      <p class="mx-auto font-black">C’est rapide et facile.</p>
+      <br />
+      <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+        <div class="form-inputs">
+          <%= f.text_field :username,
+                      autofocus: true,
+                      required: true,
+                      hide_label: true,
+                      placeholder: "votre nom Complet "
+                       %>
+          <%= f.phone_field :contact,
+                      hide_label: true,
+                      placeholder: "votre n° téléphone",
+                      required: true,
+                      help: "Nous utiliserons votre numéro de téléphone pour protéger votre compte" %>
+
+          <%= f.email_field :email,
+                      required: true,
+                      hide_label: true,
+                      placeholder: "Adresse e-mail",
+                      input_html: { autocomplete: "email" },
+                      help: "Pas obligatoire." %>
+
+          <%= f.text_field :city,
+                    hide_label: true,
+                    placeholder: "votre ville actuelle",
+                    required: true %>
+
+          <%= f.radio_button :status, 1,
+                   checked: true, label_class: "d-none" %>
+
+          <%= f.radio_button :gender, 0,
+                   label: "Une Femme",
+                   checked: true,
+                   inline: true %>
+
+          <%= f.radio_button :gender, 1,
+                   label: " Un Homme",
+                   inline: true %>
+
+
+
+          <%= f.text_field :school_name,
+                    autofocus: true,
+                    required: true,
+                    hide_label: true,
+                    placeholder: "Votre etablissement" %>
+
+
+          <%= f.password_field :password,
+                      required: true,
+                      hide_label: true,
+                      placeholder: " Entrez votre mot de passe",
+                      input_html: { autocomplete: "new-password" },
+                      help: "le mot de passe doit 6 lettres au moins" %>
+          <%= f.password_field :password_confirmation,
+                      required: true,
+                      hide_label: true,
+                      placeholder:  'retaper le mot de passe',
+                      input_html: { autocomplete: "new-password" },
+                      help: "confirmez votre mot de passe" %>
+        </div>
+        <div class="form-actions">
+          <%= f.submit "Inscription", class: 'btn btn-success font-bold'%>
+        </div>
+      <% end %>
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>

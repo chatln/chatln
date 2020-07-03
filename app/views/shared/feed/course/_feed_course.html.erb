@@ -1,0 +1,37 @@
+<!-- content feed/!-->
+<% @courses.each do |course| %>
+  <div class="mt-2">
+    <div class="card border-secondary container ">
+
+      <!-- title!-->
+      <h1 class=" card-text no-underline ">
+        <%= link_to course, class: "text-lg leading-tight font-semibold text-gray-900 hover:no-underline hover:font-semibold hover:text-lg"  do %>
+          <%= course.title %>
+        <% end %>
+      </h1>
+
+        <!-- avatar data/!-->
+      <div class="flex items-cente mt-4 ml-6">
+        <img class="w-10 h-10 bg-gray-400 rounded-full">
+        <div class="text-sm ml-4">
+          <p class="text-gray-900 leading-none capitalize font-bold"> <%= course.user.username %> </span>
+          </p>
+          <p class="text-gray-600">
+           Prof de <%= course.matiere.title %> au <%= course.user.school_name %> - <%= course.user.city %>
+          </p>
+        </div>
+      </div>
+
+      <!-- content/!-->
+      <div class=" card-text ">
+        <p class="ml-2">
+          <%=  sanitize(course.content[ 0 ... 1000]) %>
+        </p>
+        <%= link_to course_path(course) do%>
+          <span class="btn btn-outline-secondary mb-2 ml-2 hover:no-underline">
+          <i class="fa fa-plus" aria-hidden="true"></i> Continue ...</span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>

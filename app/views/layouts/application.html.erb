@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+
+    <!-- CSS LINKS/!-->
+  <%= render "shared/links/links_css" %>
+
+
+
+  </head>
+
+  <body class="bg-gray-200">
+
+      <div class="row">
+        <div class="col-12">
+          <%= render "shared/nav/notifs/devise_notif" %>
+          <%= render "shared/nav/navbar" %>
+          <div class="col-md-12 mt-12">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+
+<!-- JS components/!-->
+  <%= render "shared/js/components" %>
+  </body>
+</html>
+

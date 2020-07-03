@@ -1,0 +1,43 @@
+
+<div class="card border-secondary my-2">
+  <div class="card m-2 text-center  ">
+    <div class="flex my-2 ml-2">
+      <img class="w-10 h-10 bg-gray-400 rounded-full">
+      <div class="text-sm ml-4">
+      <!-- Username/!-->
+        <p class="text-gray-900 leading-none capitalize font-bold">
+          <%= comment.user.username %>
+        </p>
+        <p class="text-gray-600">
+          <!--athor of cours</!-->
+          <% if author_content(current_user) %>
+             Prof de <%= @course.matiere.title %> au <%= @course.user.school_name %> - <%= @course.user.city %>
+          <% else %>
+          <!-- other prof/!
+            <% if status_user(current_user) %>
+             Prof  au <%= course.user.school_name %> - <%= course.user.city %>
+            <% else %>
+            <% end %>
+          -->
+              <!-- student/!-->
+              Eleve au  <%= comment.user.school_name %> - <%= comment.user.city %>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <!-- DirectMessage /!-->
+
+    <!-- Prof Message/!-->
+    <% if status_user(current_user)%>
+      <div class="bg-blue-200">
+        <%= comment.content %>
+      </div>
+    <% else %>
+    <!-- student/!-->
+      <div class="bg-gray-200">
+        <%= comment.content %>
+      </div>
+    <% end %>
+
+  </div>
+</div>

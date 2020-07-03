@@ -1,0 +1,7 @@
+<%= bootstrap_form_for(@matiere) do |f| %>
+<div class="input_form">
+  <%= f.text_field :title, hide_label: true,  placeholder: 'Ajouter une matiere' %>
+</div>
+
+<%= f.submit 'Ajouter', class: 'btn btn-success' %>
+<% end %>

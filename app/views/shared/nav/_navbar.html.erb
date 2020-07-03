@@ -1,0 +1,66 @@
+<!--HEADER/!-->
+<!-- no header render on the home page/!-->
+<% if user_signed_in? %>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-sm navbar-dark bg-blue-600 fixed-top">
+    <div class="container">
+      <%= link_to root_path, class:"navbar-brand logo " do %>
+        CHATLN
+      <% end  %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+          <!--administration</!-->
+          <% if admin_role(current_user) %>
+            <li class="nav-item active">
+              <%= link_to manager_index_path, class:"m-links nav-link add" do %>
+                <i class="fa fa-plus" aria-hidden="true"></i> Admin
+              <% end %>
+            </li>
+          <% end %>
+          </li>
+          <li class="nav-item active">
+            <%= link_to root_path, class:"m-links nav-link" do %>
+             <i class="fa fa-home"></i> Acceuil
+            <% end %>
+          </li>
+          <!-- user avatar/!-->
+          <li class="nav-item active">
+            <span class="m-links nav-link">
+               <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+               <%= current_user.username %>
+            </span>
+
+
+          </li>
+          <% if status_user(current_user) %>
+
+            <li class="nav-item active">
+              <%= link_to new_course_path, class:"m-links nav-link " do %>
+               <i class="fa fa-plus-circle" aria-hidden="true"></i>Nouveau Résumé
+              <% end %>
+            </li>
+          <% end %>
+            <!--
+            <li class="nav-item active">
+              <%= link_to rooms_path, class:"m-links nav-link " do %>
+               <i class="fa fa-group" aria-hidden="true"></i> Groupes
+              <% end %>
+            </li>
+              /!-->
+
+          <li class="nav-item active">
+            <%= link_to destroy_user_session_path, method: :delete, class:"m-links nav-link" do %>
+             <i class="fa fa-power-off" aria-hidden="true"></i> Déconnexion
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<% end %>
+
+

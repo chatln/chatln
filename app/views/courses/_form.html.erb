@@ -1,0 +1,36 @@
+
+<%= bootstrap_form_for(@course) do |f| %>
+
+  <div class="form-inputs">
+    <%= f.text_field :title, label: 'Titre:', placeholder:"Ecrire le titre du résumé" %>
+    <%= f.text_area :content, label: 'Resumé:', id: 'summernote'  %>
+    <!--
+      <button id="edit" class="btn btn-primary" onclick="edit()" type="button">Edit 1</button>
+      <button id="save" class="btn btn-primary" onclick="save()" type="button">Save 2</button>
+      <div class="click2edit">click2edit</div>
+    </!-->
+  </div>
+
+<div class="row">
+    <div class="col-3">
+      <div class="input-form">
+        <span class="select">
+          <%= f.select :matiere_id, collection:@matieres.map { |m| [m.title, m.id] } %>
+        </span>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="input-form">
+        <span class="select">
+          <%= f.select :level_id, collection:@levels.map { |l| [l.title, l.id] } %>
+        </span>
+      </div>
+    </div>
+</div>
+
+  <div class="form-actions">
+    <%= f.submit "Créer le Résumé",  class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+

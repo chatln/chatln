@@ -1,0 +1,27 @@
+<script>
+  $('#summernote').summernote({
+    placeholder: 'Le contenu du resumé ici ...',
+      tabsize: 2,
+      height: 120,
+      minHeight: null,             // set minimum height of editor
+      maxHeight: null,             // set maximum height of editor
+      focus: true,                 // set focus to editable area after initializing summernote
+      toolbar: [
+          ['font', ['bold', 'underline', 'clear']],
+          ['color', ['color']],
+          ['inser', ['link', 'picture']]
+
+        ],
+      codeviewFilter: false,
+      codeviewIframeFilter: true
+      });
+
+ // var edit = function() {
+ // $('.click2edit').summernote({focus: true});
+//};
+
+//var save = function() {
+//  var markup = $('.click2edit').summernote('code');
+//  $('.click2edit').summernote('destroy');
+</script>
+
