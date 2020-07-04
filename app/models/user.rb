@@ -41,4 +41,6 @@ class User < ApplicationRecord
       username_changed?
   end
 
+NIVEAUX= ["3e", "Tle A", "Tle D", "Tle C"]
+CITY= ["Tiassalé", "N'Douci","Agboville","Odienné"]
 end

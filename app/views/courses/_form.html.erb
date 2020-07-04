@@ -15,14 +15,14 @@
     <div class="col-3">
       <div class="input-form">
         <span class="select">
-          <%= f.select :matiere_id, collection:@matieres.map { |m| [m.title, m.id] } %>
+          <%= f.select :matiere_id, @matieres.map { |m| [m.title, m.id] }, label: "la matiere" %>
         </span>
       </div>
     </div>
     <div class="col-3">
       <div class="input-form">
         <span class="select">
-          <%= f.select :level_id, collection:@levels.map { |l| [l.title, l.id] } %>
+          <%= f.select :level_id, @levels.map { |l| [l.title, l.id] }, label: "le Niveau" %>
         </span>
       </div>
     </div>

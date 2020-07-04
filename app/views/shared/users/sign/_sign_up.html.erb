@@ -42,13 +42,17 @@
           <%= f.radio_button :gender, 1,
                    label: " Un Homme",
                    inline: true %>
+        <div class="col-6 col-md-3 col-lg-3 inline">
 
-
-          <%= f.text_field :level_id,
-                    autofocus: true,
-                    required: true,
-                    hide_label: true,
-                    placeholder: "Votre niveau de classe" %>
+          <%= f.select :level_id,
+                   User::NIVEAUX,
+                   prompt: "Votre niveau:",
+                   label:"Niveau de la classe" %>
+          <%= f.select :city,
+                   User::CITY,
+                   prompt: "Votre ville:",
+                   label:"Ville actuelle" %>
+        </div>
 
           <%= f.text_field :school_name,
                     autofocus: true,
