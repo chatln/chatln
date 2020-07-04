@@ -5,16 +5,15 @@ ruby '2.7.0'
 #instal l machine locoale
 #mise a jour pour ;; ruby 2.7.0p0 (2019-12-25 revision 647ee6f091) [x86_64-linux]
 
-
 #gem 'passenger', '~> 6.0', '>= 6.0.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
-#gem 'puma', '~> 3.11'
+gem 'puma', '~> 3.11'
 #User passenger
-gem 'passenger', '~> 6.0', '>= 6.0.5'
+#gem 'passenger', '~> 6.0', '>= 6.0.5'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -39,6 +38,8 @@ gem 'jbuilder', '~> 2.5'
 
 ################ GEMS PROJET ##################
 
+#bundler
+gem 'bundler', '~> 2.1', '>= 2.1.4'
 
 ##### MEMBERSHIP ############"
 gem 'devise', '~> 4.7', '>= 4.7.2'
