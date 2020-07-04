@@ -78,7 +78,7 @@ gem 'bootstrap_form', '~> 4.5' # More info:  https://github.com/bootstrap-ruby/b
 
 
 ########### PRODUCTION###############
-gem 'aws-sdk', '~> 3.0', '>= 3.0.1'
+#gem 'aws-sdk', '~> 3.0', '>= 3.0.1'
 gem 'figaro', '~> 1.2'
 ######### PROVIDER CONNECT #########
 #gem 'omniauth-google-oauth2', '~> 0.8.0'
