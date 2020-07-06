@@ -1,13 +1,31 @@
-<div class="row mt-8">
-  <div class="col-md-8">
-    <%= link_to 'Matiere', new_level_path, class: 'btn btn-primary' %>
-      <br><br>
-      <%= link_to 'Voir matieres', levels_path, class: 'btn btn-primary' %>
-    <br><br>
 
-    <%= link_to 'Promotion', new_level_path, class: 'btn btn-primary' %>
-      <br><br>
-      <%= link_to 'Voir Promotion', levels_path, class: 'btn btn-primary' %>
-    <br><br>
+
+<div class="container mt-8">
+  <div class="row mx-auto">
+    <div class="col-4">
+      <h2 class="font-bold text-2xl">Ajoute</h2>
+      <hr>
+      <br>
+      <p>
+       <%= link_to 'Ajouter Matiere', new_matiere_path, class: 'btn btn-dark m-2' %>
+      </p>
+
+      <p>
+       <%= link_to 'Ajouter Promotions', new_level_path, class: 'btn btn-dark m-2' %>
+      </p>
+
+    </div>
+    <div class="col-4">
+      <h2 class="font-bold text-2xl">Affichage</h2>
+      <hr>
+      <br>
+      <p>
+        <%= link_to 'Voir matieres', matieres_path, class: 'btn btn-primary m-2' %>
+      </p>
+      <p>
+        <%= link_to 'Voir Promotions', levels_path, class: 'btn btn-primary m-2' %>
+      </p>
+    </div>
+
   </div>
 </div>

@@ -14,7 +14,7 @@ module ApplicationHelper
   #admin
   #devrait etre bien gerer avec les role
   def admin_role(current_user)
-    user_signed_in? && current_user.email == 'kamate@gmail.com' || 'odienne@gmail.com'
+    user_signed_in? && current_user.email == 'chatln.kamkara@gmail.com'
   end
 #status
   #revoir la  condition
