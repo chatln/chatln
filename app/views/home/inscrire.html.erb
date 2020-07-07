@@ -26,10 +26,11 @@
                       input_html: { autocomplete: "email" },
                       help: "Pas obligatoire." %>
 
-          <%= f.text_field :city,
-                    hide_label: true,
-                    placeholder: "votre ville actuelle",
-                    required: true %>
+          <%= f.select :city,
+                   User::CITY,
+                   hide_label: true,
+                   prompt: "Votre ville:",
+                   placeholder:"Ville actuelle" %>
 
           <%= f.radio_button :status, 1,
                    checked: true, label_class: "d-none" %>

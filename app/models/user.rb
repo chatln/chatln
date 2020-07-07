@@ -41,6 +41,6 @@ class User < ApplicationRecord
       username_changed?
   end
 
-NIVEAUX= ["3e", "Tle A", "Tle D", "Tle C"]
-CITY= ["Tiassalé", "N'Douci","Agboville","Odienné"]
+NIVEAUX= ["Tle A", "Tle D", "Tle C"]
+CITY= ["Tiassalé", "N'Douci","Agboville","Odienné","Divo", "Kouto","Man","Bouaké","Yamoussokro","Autres villes"]
 end
