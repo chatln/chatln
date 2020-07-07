@@ -11,18 +11,18 @@
                       autofocus: true,
                       required: true,
                       hide_label: true,
-                      placeholder: "votre nom Complet "
+                      placeholder: "votre nom Complet: "
                        %>
           <%= f.phone_field :contact,
                       hide_label: true,
-                      placeholder: "votre n° téléphone",
+                      placeholder: "votre n° téléphone:",
                       required: true,
                       help: "Nous utiliserons votre numéro de téléphone pour protéger votre compte" %>
 
           <%= f.email_field :email,
                       required: true,
                       hide_label: true,
-                      placeholder: "Adresse e-mail",
+                      placeholder: "Adresse e-mail:",
                       input_html: { autocomplete: "email" },
                       help: "Pas obligatoire." %>
 
@@ -42,39 +42,38 @@
           <%= f.select :level_id,
                    User::NIVEAUX,
                    hide_label: true,
-                   prompt: "Votre niveau:",
-                   label:"Niveau de la classe" %>
+                   prompt: "Niveau de la classe:" %>
           <%= f.select :city,
                    User::CITY,
                    hide_label: true,
                    prompt: "Votre ville:",
-                   placeholder:"Ville actuelle" %>
+                   placeholder:"Ville actuelle:" %>
         </div>
 
           <%= f.text_field :school_name,
                     autofocus: true,
                     required: true,
                     hide_label: true,
-                    placeholder: "Votre école" %>
+                    placeholder: "Votre école:" %>
 
           <%= f.text_field :matricule,
                     hide_label: true,
-                    placeholder: "N° matricule national",
+                    placeholder: "N° matricule national:",
                     required: true,
-                    help: "Votre matricule National" %>
+                    help: "Votre matricule National." %>
 
           <%= f.password_field :password,
                       required: true,
                       hide_label: true,
-                      placeholder: " Entrez votre mot de passe",
+                      placeholder: " Entrez votre mot de passe:",
                       input_html: { autocomplete: "new-password" },
-                      help: "le mot de passe doit 6 lettres au moins" %>
+                      help: "le mot de passe doit 6 lettres au moins." %>
           <%= f.password_field :password_confirmation,
                       required: true,
                       hide_label: true,
-                      placeholder:  'retaper le mot de passe',
+                      placeholder:  'retaper le mot de passe:',
                       input_html: { autocomplete: "new-password" },
-                      help: "confirmez votre mot de passe" %>
+                      help: "confirmez votre mot de passe." %>
         </div>
         <div class="form-actions">
           <%= f.submit "Inscription", class: 'btn btn-success font-bold'%>

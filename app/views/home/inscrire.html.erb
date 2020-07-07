@@ -11,26 +11,25 @@
                       autofocus: true,
                       required: true,
                       hide_label: true,
-                      placeholder: "votre nom Complet "
+                      placeholder: "votre nom Complet:"
                        %>
           <%= f.phone_field :contact,
                       hide_label: true,
-                      placeholder: "votre n° téléphone",
+                      placeholder: "Votre n° téléphone:",
                       required: true,
                       help: "Nous utiliserons votre numéro de téléphone pour protéger votre compte" %>
 
           <%= f.email_field :email,
                       required: true,
                       hide_label: true,
-                      placeholder: "Adresse e-mail",
-                      input_html: { autocomplete: "email" },
-                      help: "Pas obligatoire." %>
+                      placeholder: "Adresse e-mail:",
+                      input_html: { autocomplete: "email" } %>
 
           <%= f.select :city,
                    User::CITY,
                    hide_label: true,
                    prompt: "Votre ville:",
-                   placeholder:"Ville actuelle" %>
+                   placeholder:"Ville actuelle:" %>
 
           <%= f.radio_button :status, 1,
                    checked: true, label_class: "d-none" %>
@@ -50,13 +49,13 @@
                     autofocus: true,
                     required: true,
                     hide_label: true,
-                    placeholder: "Votre etablissement" %>
+                    placeholder: "Votre etablissement:" %>
 
 
           <%= f.password_field :password,
                       required: true,
                       hide_label: true,
-                      placeholder: " Entrez votre mot de passe",
+                      placeholder: " Entrez votre mot de passe:",
                       input_html: { autocomplete: "new-password" },
                       help: "le mot de passe doit 6 lettres au moins" %>
           <%= f.password_field :password_confirmation,
@@ -70,7 +69,11 @@
           <%= f.submit "Inscription", class: 'btn btn-success font-bold'%>
         </div>
       <% end %>
-      <%= render "devise/shared/links" %>
+      <br />
+      <p>
+        Pour s'inscrire?
+        <%= link_to "Connecter", new_session_path(resource_name), class: "font-bold" %> <br />
+      </p>
     </div>
   </div>
 </div>
