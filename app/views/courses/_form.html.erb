@@ -11,22 +11,22 @@
     </!-->
   </div>
 
-<div class="row">
-    <div class="col-3">
-      <div class="input-form">
-        <span class="select">
-          <%= f.select :matiere_id, @matieres.map { |m| [m.title, m.id] }, label: "la matiere" %>
-        </span>
+  <div class="row">
+      <div class="col-3">
+        <div class="input-form">
+          <span class="select">
+            <%= f.select :matiere_id, @matieres.map { |m| [m.title, m.id] }, label: "Matiere" %>
+          </span>
+        </div>
       </div>
-    </div>
-    <div class="col-3">
-      <div class="input-form">
-        <span class="select">
-          <%= f.select :level_id, @levels.map { |l| [l.title, l.id] }, label: "le Niveau" %>
-        </span>
+      <div class="col-3">
+        <div class="input-form">
+          <span class="select">
+            <%= f.select :level_id, @levels.map { |l| [l.title, l.id] }, label: "Niveau" %>
+          </span>
+        </div>
       </div>
-    </div>
-</div>
+  </div>
 
   <div class="form-actions">
     <%= f.submit "Créer le Résumé",  class: "btn btn-primary" %>
