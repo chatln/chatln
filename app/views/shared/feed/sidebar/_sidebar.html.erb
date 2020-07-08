@@ -10,15 +10,6 @@
      <li class="text-lg font-bold hover:no-underline"> <%= link_to m.title, m %></li>
     <% end %>
   </ul>
-  <!-- visible sur mobile uniquement/!-->
-  <select>
-    <option selected="selected">Choisir une matiere</option>
-    <!-- refactoriser pas bon/!-->
-      <% @matieres.each do |m| %>
-        <option>
-          <%= link_to m.title, m, class: 'text-decoration-none font-weight-bold' %>
-        </option>
-      <% end %>
-    </select>
+
 </div>
 
