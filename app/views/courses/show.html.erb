@@ -32,17 +32,17 @@
           </p>
         </div>
 
+      </div>
         <!-- author of content/!-->
        <% if author_content(current_user) %>
         <div class="border-secondary m-2">
-          <%= link_to 'Reponde Aux Questions', edit_course_path(@course), class: "btn btn-primary" %>
+          <%= link_to 'Reponde Aux Questions', edit_course_path(@course), class: "btn btn-success" %>
           <!--
             |
           <%= link_to 'Ajouter Groupes', rooms_path %>
             /!-->
         </div>
        <% end %>
-      </div>
     </div>
     <!-- Direct Message/!-->
     <div class="col-12 col-md-5 col-lg-5">
