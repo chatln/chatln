@@ -2,8 +2,8 @@
 <%= bootstrap_form_for(@course) do |f| %>
 
   <div class="form-inputs">
-    <%= f.text_field :title, label: 'Titre:', placeholder:"Ecrire le titre du résumé" %>
-    <%= f.text_area :content, label: 'Resumé:', id: 'summernote'  %>
+    <%= f.text_field :title, label: 'Titre:', placeholder:"Ecrire le titre du Renforcément" %>
+    <%= f.text_area :content, label: 'Renforcément:', id: 'summernote'  %>
     <!--
       <button id="edit" class="btn btn-primary" onclick="edit()" type="button">Edit 1</button>
       <button id="save" class="btn btn-primary" onclick="save()" type="button">Save 2</button>
@@ -29,7 +29,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.submit "Créer le Résumé",  class: "btn btn-primary" %>
+    <%= f.submit "Créer le Renforcément",  class: "btn btn-primary" %>
   </div>
 <% end %>
 

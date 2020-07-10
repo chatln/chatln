@@ -17,7 +17,7 @@ class User < ApplicationRecord
             :email,
             :status,
             :school_name,
-            :gender, presence: true
+             presence: true
   #unique
   # validates :contact,
   #           :matricule, uniqueness: true
@@ -41,6 +41,8 @@ class User < ApplicationRecord
       username_changed?
   end
 
+#COSTANTE
+STATUS= ["Officiel", "Libre"]
 NIVEAUX= ["Tle A", "Tle D", "Tle C"]
 CITY= ["Tiassalé", "N'Douci","Agboville","Odienné","Divo", "Kouto","Man","Bouaké","Yamoussokro","Autres villes"]
 end

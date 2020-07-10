@@ -2,65 +2,60 @@
   <div class="col-12 col-md-6 col-lg-6 mx-auto">
     <div class="card border-secondary container">
       <h2 class="font-bold text-4xl text-center">Inscription</h2>
-      <p class="mx-auto font-black">C’est rapide et facile.</p>
+      <p class="mx-auto font-bold">Prof Dans Toutes les matières, même Pour l'Oral.</p>
       <br />
       <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
         <div class="form-inputs">
+
           <%= f.text_field :username,
                       autofocus: true,
                       required: true,
                       hide_label: true,
-                      placeholder: "votre nom Complet: "
+                      placeholder: "Nom Complet:"
                        %>
           <%= f.phone_field :contact,
                       hide_label: true,
-                      placeholder: "votre n° téléphone:",
+                      placeholder: "N° téléphone:",
                       required: true,
-                      help: "Nous utiliserons votre numéro de téléphone pour protéger votre compte" %>
-
-          <%= f.email_field :email,
-                      required: true,
-                      hide_label: true,
-                      placeholder: "Adresse e-mail:",
-                      input_html: { autocomplete: "email" },
-                      help: "Pas d'e-mail: utlise ton numéro et ajoute @gmail.com a la fin." %>
-
-          <%= f.radio_button :status, 0,
-                   checked: true, label_class: "d-none", hide_field: true %>
-
-          <%= f.radio_button :gender, 0,
-                   label: "Une Femme",
-                   checked: true,
-                   inline: true %>
-
-          <%= f.radio_button :gender, 1,
-                   label: " Un Homme",
-                   inline: true %>
-        <div class="col-6 col-md-3 col-lg-3 inline mt-8">
-
-          <%= f.select :level_id,
-                   User::NIVEAUX,
-                   hide_label: true,
-                   prompt: "Niveau de la classe:" %>
-          <%= f.select :city,
-                   User::CITY,
-                   hide_label: true,
-                   prompt: "Votre ville:",
-                   placeholder:"Ville actuelle:" %>
-        </div>
-
-          <%= f.text_field :school_name,
-                    autofocus: true,
-                    required: true,
-                    hide_label: true,
-                    placeholder: "Votre école:" %>
+                      help: "Nous utiliserons votre numéro de téléphone pour protéger votre compte",
+                      maxlenght: "8" %>
 
           <%= f.text_field :matricule,
                     hide_label: true,
                     placeholder: "N° matricule national:",
                     required: true,
                     help: "Votre matricule National." %>
+          <%= f.email_field :email,
+                      required: true,
+                      hide_label: true,
+                      placeholder: "Adresse e-mail:",
+                      input_html: { autocomplete: "email" },
+                      help: "Pas d'e-mail: utlise ton N° Matricule et ajoute @gmail.com a la fin." %>
+
+        <div class="col-6 col-md-3 col-lg-3 inline">
+
+          <%= f.select :status,
+                   User::STATUS,
+                   hide_label: true,
+                   prompt: "Candidats:" %>
+
+          <%= f.select :level_id,
+                   User::NIVEAUX,
+                   hide_label: true,
+                   prompt: "Niveau de la classe:" %>
+
+          <%= f.select :city,
+                   User::CITY,
+                   hide_label: true,
+                   prompt: "Ville de Fréquentation:",
+                   placeholder:"Ville actuelle:" %>
+        </div>
+          <%= f.text_field :school_name,
+                    autofocus: true,
+                    required: true,
+                    hide_label: true,
+                    placeholder: "Votre école:" %>
 
           <%= f.password_field :password,
                       required: true,
@@ -74,7 +69,8 @@
                       placeholder:  'retaper le mot de passe:',
                       input_html: { autocomplete: "new-password" },
                       help: "confirmez votre mot de passe." %>
-        </div>
+
+      </div>
         <div class="form-actions">
           <%= f.submit "Inscription", class: 'btn btn-success font-bold'%>
         </div>

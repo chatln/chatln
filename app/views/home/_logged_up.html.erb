@@ -23,7 +23,8 @@
                               hide_label: true,
                               autofocus: true,
                               input_html: { autocomplete: "email" },
-                              placeholder: "Contact ou e-mail" %>
+                              placeholder: "E-mail",
+                              help: "Certaine ont Utilisé leur N° et ajouter @gmail.com a la fin." %>
                   <%= f.password_field :password,
                               required: false,
                               hide_label: true,
@@ -44,7 +45,6 @@
 
              <%= link_to "Pour les élèves", new_user_registration_path, class: "btn btn-danger font-bold text-2xl text-center mx-auto" %>
 
-              <a href="https://forms.gle/LpxkXims7BHZahkA6" class="btn btn-primary font-bold text-2xl text-center mx-auto mt-2">Pour les profs</a>
           </div>
 
         </div>
