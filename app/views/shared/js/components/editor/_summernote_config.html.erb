@@ -1,3 +1,4 @@
+<% if status_user(current_user) %>
 <script>
   $('#summernote').summernote({
     placeholder: 'Le contenu du Renforcément ici ...',
@@ -17,12 +18,26 @@
       codeviewIframeFilter: true
       });
 
- // var edit = function() {
- // $('.click2edit').summernote({focus: true});
-//};
-
-//var save = function() {
-//  var markup = $('.click2edit').summernote('code');
-//  $('.click2edit').summernote('destroy');
 </script>
+<% else %>
+<script>
+  $('#summernote').summernote({
+    placeholder: 'Faite les photos du sujet et la correction, puis cliquez sur icone image ppour ajouter...',
+      tabsize: 2,
+      height: 200,
+      minHeight: null,             // set minimum height of editor
+      maxHeight: null,             // set maximum height of editor
+      focus: true,                 // set focus to editable area after initializing summernote
+      toolbar: [
+          ['font', ['bold', 'underline', 'clear']],
+          ['color', ['color']],
+          ['inser', ['picture']],
+          ['view', ['fullscreen']]
 
+        ],
+      codeviewFilter: false,
+      codeviewIframeFilter: true
+      });
+
+</script>
+<% end %>
