@@ -97,13 +97,18 @@ ActiveRecord::Schema.define(version: 2020_06_25_215920) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet "current_sign_in_ip"
+    t.inet "last_sign_in_ip"
     t.string "username", null: false
     t.string "contact", null: false
-    t.string "city", null: false
-    t.string "school_name"
+    t.string "city"
+    t.string "school"
     t.string "level_id"
-    t.string "class_name"
-    t.string "status"
+    t.string "classe"
+    t.string "role"
     t.string "resume"
     t.string "gender"
     t.string "matricule"

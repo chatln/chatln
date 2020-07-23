@@ -15,11 +15,11 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.datetime :remember_created_at
 
       ## Trackable
-      # t.integer  :sign_in_count, default: 0, null: false
-      # t.datetime :current_sign_in_at
-      # t.datetime :last_sign_in_at
-      # t.inet     :current_sign_in_ip
-      # t.inet     :last_sign_in_ip
+       t.integer  :sign_in_count, default: 0, null: false
+       t.datetime :current_sign_in_at
+       t.datetime :last_sign_in_at
+       t.inet     :current_sign_in_ip
+       t.inet     :last_sign_in_ip
 
       ## Confirmable
       # t.string   :confirmation_token
@@ -34,14 +34,14 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
 
       t.string :username, null: false
       t.string :contact, null: false
-      t.string :city, null: false
-      t.string :school_name
-      t.string :promotion_name
-      t.string :class_name
-      t.string :status
+      t.string :city
+      t.string :school
+      t.string :level_id
+      t.string :classe
+      t.string :role
       t.string :resume
       t.string :gender
-      t.string :matricule, null: false
+      t.string :matricule
       t.string :slug
       t.string :avatar
       t.boolean :terms
@@ -55,6 +55,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
     # add_index :users, :confirmation_token,   unique: true
     # add_index :users, :unlock_token,         unique: true
       add_index :users,  :contact,             unique: true
-      add_index :users,  :matricule,             unique: true
+
   end
 end
