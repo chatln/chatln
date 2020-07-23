@@ -34,7 +34,7 @@
                <%= current_user.username %>
             </span>
           </li>
-          <% if status_user(current_user) %>
+          <% if student_role(current_user) %>
 
             <li class="nav-item active">
               <%= link_to new_course_path, class: "m-links nav-link " do %>

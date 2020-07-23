@@ -19,13 +19,13 @@
             <p class="text-gray-900 leading-none capitalize font-bold">
              <%= @course.user.username %>
             </p>
-            <% if status_user(current_user) %>
+            <% if teach_content(current_user) %>
               <p class="text-gray-600">
-               Prof de <%= @course.matiere.title %> au <%= @course.user.school_name %> - <%= @course.user.city %>
+               Prof de <%= @course.matiere.title %> au <%= @course.user.school %> - <%= @course.user.city %>
               </p>
             <% else %>
               <p class="text-gray-600">
-               <%= @course.user.level_id %> <%= @course.matiere.title %> au <%= @course.user.school_name %> - <%= @course.user.city %>
+               <%= @course.user.level_id %> <%= @course.matiere.title %> au <%= @course.user.school %> - <%= @course.user.city %>
               </p>
             <% end %>
           </div>
@@ -40,18 +40,9 @@
 
       </div>
         <!-- author of content/!-->
-       <% if author_content(current_user) %>
-       <% if status_user(current_user) %>
+       <% if teach_content(current_user) %>
         <div class="border-secondary m-2">
           <%= link_to 'Reponde Aux Questions ', edit_course_path(@course), class: "btn btn-success" %>
-          <!--
-            |
-          <%= link_to Ajouter Groupes, rooms_path %>
-            /!-->
-        </div>
-        <% else %>
-          <%= link_to 'Ajouter les reponses', edit_course_path(@course), class: "btn btn-success" %>
-        <% end %>
        <% end %>
     </div>
     <!-- Direct Message/!-->

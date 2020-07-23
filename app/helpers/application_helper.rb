@@ -27,21 +27,19 @@ module ApplicationHelper
     @devise_mapping ||= Devise.mappings[:user]
   end
 
-
-
-  #admin
+  #admin  " pas propre.. enum et les bon gem "
   #devrait etre bien gerer avec les role
   def admin_role(current_user)
     user_signed_in? && current_user.email == 'chatln.kamkara@gmail.com'
   end
 #status
   #revoir la  condition
-  def status_user(current_user)
-   user_signed_in? && current_user.status == "1"
+  def student_role(current_user)
+   user_signed_in? && current_user.role == "X12"
 
   end
 
-def author_content(current_user)
+def teach_content(current_user)
   user_signed_in? && current_user.id == @course.user_id
 end
 

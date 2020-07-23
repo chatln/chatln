@@ -1,15 +1,3 @@
-<% if status_user(current_user) %>
-<% else %>
-<div class="mt-2">
-  <div class="card border-secondary container">
-      <%= link_to  new_course_path, class: "btn btn-danger mt-2" do %>
-        <i class="fa fa-plus-circle" aria-hidden="true"></i> <span class="font-bold"><%= current_user.username %> Ajoute un Sujet du BAC</span>
-      <% end %>
-      <small class="mx-auto">Si c'est le sujet du BAC ou un Sujet Similaire, tout le monde en profite.</small>
-  </div>
-</div>
-<% end %>
-
 
 <!-- content feed/!-->
 <% @courses.each do |course| %>
@@ -29,13 +17,13 @@
         <div class="text-sm ml-4">
           <p class="text-gray-900 leading-none capitalize font-bold"> <%= course.user.username %> </span>
           </p>
-          <% if status_user(current_user) %>
+          <% if student_role(current_user) %>
             <p class="text-gray-600">
-             Prof de <%= course.matiere.title %> au <%= course.user.school_name %> - <%= course.user.city %>
+             Prof de <%= course.matiere.title %> au <%= course.user.school %> - <%= course.user.city %>
             </p>
           <% else %>
             <p class="text-gray-600">
-             <%= course.user.level_id %> <%= course.matiere.title %> au <%= course.user.school_name %> - <%= course.user.city %>
+             <%= course.user.level_id %> <%= course.matiere.title %> au <%= course.user.school %> - <%= course.user.city %>
             </p>
           <% end %>
         </div>

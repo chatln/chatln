@@ -25,32 +25,6 @@
                       placeholder: "Adresse e-mail:",
                       input_html: { autocomplete: "email" } %>
 
-          <%= f.select :city,
-                   User::CITY,
-                   hide_label: true,
-                   prompt: "Votre ville:",
-                   placeholder:"Ville actuelle:" %>
-
-          <%= f.radio_button :status, 1,
-                   checked: true, label_class: "d-none" %>
-
-          <%= f.radio_button :gender, 0,
-                   label: "Une Femme",
-                   checked: true,
-                   inline: true %>
-
-          <%= f.radio_button :gender, 1,
-                   label: " Un Homme",
-                   inline: true %>
-
-
-
-          <%= f.text_field :school_name,
-                    autofocus: true,
-                    required: true,
-                    hide_label: true,
-                    placeholder: "Votre etablissement:" %>
-
 
           <%= f.password_field :password,
                       required: true,
@@ -58,6 +32,7 @@
                       placeholder: " Entrez votre mot de passe:",
                       input_html: { autocomplete: "new-password" },
                       help: "le mot de passe doit 6 lettres au moins" %>
+
           <%= f.password_field :password_confirmation,
                       required: true,
                       hide_label: true,

@@ -1,0 +1,44 @@
+ <%= f.select :level_id,
+                   User::NIVEAUX,
+                   hide_label: true,
+                   prompt: "Niveau de la classe:" %>
+
+          <%= f.select :city,
+                   User::CITY,
+                   hide_label: true,
+                   prompt: "Ville de Fréquentation:",
+                   placeholder:"Ville actuelle:" %>
+        </div>
+          <%= f.text_field :school,
+                    autofocus: true,
+                    required: true,
+                    hide_label: true,
+                    placeholder: "Votre école:" %>
+
+
+<%= f.select :city,
+                   User::CITY,
+                   hide_label: true,
+                   prompt: "Votre ville:",
+                   placeholder:"Ville actuelle:" %>
+
+          <%= f.radio_button :status, 1,
+                   checked: true, label_class: "d-none" %>
+
+          <%= f.radio_button :gender, 0,
+                   label: "Une Femme",
+                   checked: true,
+                   inline: true %>
+
+          <%= f.radio_button :gender, 1,
+                   label: " Un Homme",
+                   inline: true %>
+
+
+
+          <%= f.text_field :school_name,
+                    autofocus: true,
+                    required: true,
+                    hide_label: true,
+                    placeholder: "Votre etablissement:" %>
+
