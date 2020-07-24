@@ -2,9 +2,12 @@
 <!-- boucle for matiere items/!-->
 <div class="container-fluid">
   <!-- Icon/!-->
-  <span class="fil-icon bg-red-600">
-    <i class="fa fa-newspaper-o mr-1"></i> Fil Matières
+  <div class="md:mt-2 md:mb-2  bg-red-300">
+
+  <span class="fil-icon mx-auto">
+      <i class="fa fa-newspaper-o mr-1"></i> Fil Matières
   </span>
+  </div>
   <ul class="leading-relaxed pt-2">
     <% @matieres.each do |m| %>
      <li class="text-lg font-bold hover:no-underline"> <%= link_to m.title, m %></li>

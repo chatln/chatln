@@ -1,5 +1,5 @@
 
-<div class="card border-secondary my-2">
+<div class="card my-2">
   <div class="card m-2 text-center  ">
     <div class="flex my-2 ml-2">
       <img class="w-10 h-10 bg-gray-400 rounded-full">
@@ -10,17 +10,11 @@
         </p>
         <p class="text-gray-600">
           <!--athor of cours</!-->
-          <% if author_content(current_user) %>
-             Prof de <%= @course.matiere.title %> au <%= @course.user.school_name %> - <%= @course.user.city %>
+          <% if teach_content(current_user) %>
+             Prof de <%= @course.matiere.title %> au <%= @course.user.school %> - <%= @course.user.city %>
           <% else %>
-          <!-- other prof/!
-            <% if status_user(current_user) %>
-             Prof  au <%= course.user.school_name %> - <%= course.user.city %>
-            <% else %>
-            <% end %>
-          -->
               <!-- student/!-->
-              Eleve au  <%= comment.user.school_name %> - <%= comment.user.city %>
+              Eleve au  <%= comment.user.school %> - <%= comment.user.city %>
           <% end %>
         </p>
       </div>
@@ -28,7 +22,7 @@
     <!-- DirectMessage /!-->
 
     <!-- Prof Message/!-->
-    <% if status_user(current_user)%>
+    <% if teach_role(current_user)%>
       <div class="bg-blue-200">
         <%= comment.content %>
       </div>
@@ -38,6 +32,5 @@
         <%= comment.content %>
       </div>
     <% end %>
-
   </div>
 </div>
