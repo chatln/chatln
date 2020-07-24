@@ -12,21 +12,23 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <% if admin_role(current_user) %>
-          <li class="nav-item active">
+
           <!--administration</!-->
+          <% if admin_role(current_user) %>
             <li class="nav-item active">
               <%= link_to manager_index_path, class: "m-links nav-link add" do %>
                 <i class="fa fa-plus" aria-hidden="true"></i> Admin
               <% end %>
             </li>
-          </li>
           <% end %>
+
+        <!-- Home onglet/!-->
           <li class="nav-item active">
             <%= link_to root_path, class: "m-links nav-link" do %>
              <i class="fa fa-home"></i> Acceuil
             <% end %>
           </li>
+
           <!-- user avatar/!-->
           <li class="nav-item active">
             <span class="m-links nav-link">
@@ -34,22 +36,17 @@
                <%= current_user.username %>
             </span>
           </li>
-          <% if student_role(current_user) %>
 
+          <!-- create course by teacher/!-->
+          <% if teach_role(current_user) %>
             <li class="nav-item active">
               <%= link_to new_course_path, class: "m-links nav-link " do %>
-               <i class="fa fa-plus-circle" aria-hidden="true"></i>Créer un Renfo
+               <i class="fa fa-plus-circle" aria-hidden="true"></i>Créer un Cours
               <% end %>
             </li>
           <% end %>
-            <!--
-            <li class="nav-item active">
-              <%= link_to rooms_path, class:"m-links nav-link " do %>
-               <i class="fa fa-group" aria-hidden="true"></i> Groupes
-              <% end %>
-            </li>
-              /!-->
 
+           <!-- Sign out /!-->
           <li class="nav-item active">
             <%= link_to destroy_user_session_path, method: :delete, class:"m-links nav-link" do %>
              <i class="fa fa-power-off" aria-hidden="true"></i> Déconnexion

@@ -35,7 +35,7 @@ module ApplicationHelper
   end
 #status professeur
   def teach_role(current_user)
-   user_signed_in? && current_user.role == "XP1P2"
+   user_signed_in? && current_user.email == 'chatln.kamkara@gmail.com' || user_signed_in? && current_user.role == "XP1P2"
   end
 
 
