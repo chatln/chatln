@@ -66,8 +66,8 @@ gem 'webpacker', '~> 5.1', '>= 5.1.1'
 gem 'tailwindcss', '~> 1.0', '>= 1.0.3'
 gem 'bootstrap_form', '~> 4.5' # More info:  https://github.com/bootstrap-ruby/bootstrap_form
 
-####### ADMIN ############
-#gem "administrate"
+####### ADMINISTRATION ############
+gem 'administrate', '~> 0.14.0'
 
 ####### Non implement now  ######
 #gem 'pagy', '~> 3.7', '>= 3.7.3'#pagination
