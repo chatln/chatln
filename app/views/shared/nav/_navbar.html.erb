@@ -1,61 +1,81 @@
 <!--HEADER/!-->
 <!-- no header render on the home page/!-->
-<% if user_signed_in? %>
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-sm navbar-dark bg-blue-600 fixed-top">
-    <div class="container">
-      <%= link_to root_path, class: "navbar-brand logo " do %>
+<nav class="navbar navbar-expand-sm navbar-dark bg-blue-600 fixed-top">
+  <div class="container">
+    <%= link_to root_path, class: "navbar-brand logo " do %>
         CHATLN
-      <% end  %>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
+    <% end  %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-          <!--administration</!-->
-          <% if admin_role(current_user) %>
+    <% if user_signed_in? %>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <!--administration</!-->
+            <% if admin_role(current_user) %>
+              <li class="nav-item active">
+                <%= link_to admin_root_path, class: "m-links nav-link add" do %>
+                  <i class="fa fa-plus" aria-hidden="true"></i> Administration
+                <% end %>
+              </li>
+            <% end %>
+
+            <!-- Home onglet/!-->
             <li class="nav-item active">
-              <%= link_to admin_root_path, class: "m-links nav-link add" do %>
-                <i class="fa fa-plus" aria-hidden="true"></i> Administration
+              <%= link_to root_path, class: "m-links nav-link" do %>
+               <i class="fa fa-home"></i> Acceuil
               <% end %>
             </li>
-          <% end %>
 
-        <!-- Home onglet/!-->
-          <li class="nav-item active">
-            <%= link_to root_path, class: "m-links nav-link" do %>
-             <i class="fa fa-home"></i> Acceuil
-            <% end %>
-          </li>
-
-          <!-- user avatar/!-->
-          <li class="nav-item active">
-            <span class="m-links nav-link">
-               <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-               <%= current_user.username %>
-            </span>
-          </li>
-
-          <!-- create course by teacher/!-->
-          <% if teach_role(current_user) %>
+            <!-- user avatar/!-->
             <li class="nav-item active">
-              <%= link_to new_course_path, class: "m-links nav-link " do %>
-               <i class="fa fa-plus-circle" aria-hidden="true"></i>Créer un Cours
+              <span class="m-links nav-link">
+                 <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                 <%= current_user.username %>
+              </span>
+            </li>
+
+            <!-- create course by teacher/!-->
+            <% if teach_role(current_user) %>
+              <li class="nav-item active">
+                <%= link_to new_course_path, class: "m-links nav-link " do %>
+                 <i class="fa fa-plus-circle" aria-hidden="true"></i>Créer un Cours
+                <% end %>
+              </li>
+            <% end %>
+
+             <!-- Sign out /!-->
+            <li class="nav-item active">
+              <%= link_to destroy_user_session_path, method: :delete, class:"m-links nav-link" do %>
+               <i class="fa fa-power-off" aria-hidden="true"></i> Déconnexion
               <% end %>
             </li>
-          <% end %>
+          </ul>
+        </div>
+      <% else %>
+        <!-- sign in form/!-->
+        <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name), layout: :inline) do |f| %>
+          <div class="">
+            <%= f.email_field :email,
+                        hide_label:true,
+                        autofocus: true,
+                        placeholder:  "N° tel ou Adresse e-mail:" %>
+          </div>
+          <div class="mx-2">
+            <%= f.password_field :password,
+                        required: false,
+                        hide_label: true,
+                        placeholder:"taper vote mot de passe ici" %>
+          </div>
 
-           <!-- Sign out /!-->
-          <li class="nav-item active">
-            <%= link_to destroy_user_session_path, method: :delete, class:"m-links nav-link" do %>
-             <i class="fa fa-power-off" aria-hidden="true"></i> Déconnexion
-            <% end %>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-<% end %>
+          <div class="form-actions">
+            <%= f.submit "Connexion",  class: 'btn btn-primary font-bold'%>
+          </div>
+        <% end %>
+      <% end %>
+  </div>
+</nav>
 
 

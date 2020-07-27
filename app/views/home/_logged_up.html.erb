@@ -1,62 +1,62 @@
 <% content_for @title= "100% au BAC 2020" %>
 
 <div class="row">
-  <div class="col-12 col-md-7 col-lg-7 mx-auto">
-    <div class="card border-secondary container">
-      <h2 class="font-bold text-4xl text-center">CHATLN</h2>
-      <p class="mx-auto font-black">
-        Inscrit toi sur la plateforme pour Bénéficiez des sujets déjà corrigé et ajouter ton sujets
-      </p>
-      <p class="mx-auto">
-        <span class="font-bold">Qui sait, ça peut être le sujet du Bac 2020</span>.
-      </p>
-      <hr />
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-md-6 col-lg-6 text-center order-md-2">
-            <h2 class="font-bold text-center mb-2">Connexion</h2>
+  <div class="col-7">
+    <p class="font-bold text-3xl">
+      9 Professeurs a domiciles, pour vous faciliter l'année scolaire.
+    </p>
+  </div>
+  <div class="col-4">
+      <h2 class="font-bold text-4xl text-center">Inscription</h2>
+      <p class="text-center mb-2">C’est rapide et facile.</p>
 
-            <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-                <div class="form-inputs">
-                  <%= f.email_field :email,
-                              required: false,
-                              hide_label: true,
-                              autofocus: true,
-                              input_html: { autocomplete: "email" },
-                              placeholder: "E-mail",
-                              help: "Certain ont Utilisé leur N° Matricule et ajouter @gmail.com a la fin." %>
-                  <%= f.password_field :password,
-                              required: false,
-                              hide_label: true,
-                              placeholder:"vote mot de passe",
-                              input_html: { autocomplete: "current-password" } %>
-                  <%= f.check_box :remember_me, label: "Restez connecté", as: :boolean if devise_mapping.rememberable? %>
-                </div>
 
-                <div class="form-actions  mb-2">
-                  <%= f.submit "Connexion",  class: 'btn btn-primary font-bold'%>
-                </div>
-            <% end %>
-          </div>
+    <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
-          <div class="col-12 col-md-6 col-lg-6 my-6 text-center order-md-1">
-            <h2 class="font-bold text-center text-3xl">Inscription</h2>
-             <p class="mx-auto text-sm mb-2">C’est rapide et facile.</p>
+        <div class="form-inputs">
 
-             <%= link_to "Pour les élèves", new_user_registration_path, class: "btn btn-danger font-bold text-2xl text-center mx-auto" %>
+          <%= f.text_field :username,
+                      required: true,
+                      hide_label: true,
+                      placeholder: "Nom Complet:"
+                       %>
+          <%= f.phone_field :contact,
+                      hide_label: true,
+                      placeholder: "N° téléphone:",
+                      required: true,
+                      help: "Nous utiliserons votre numéro de téléphone pour protéger votre compte",
+                      maxlenght: "8" %>
 
-          </div>
+          <%= f.text_field :matricule,
+                    hide_label: true,
+                    placeholder: "N° matricule national:",
+                    required: true,
+                    help: "Votre matricule National." %>
+          <%= f.email_field :email,
+                      required: true,
+                      hide_label: true,
+                      placeholder: "Adresse e-mail:",
+                      input_html: { autocomplete: "email" },
+                      help: "Vous pouvez utlisé votre N° Matricule et ajouté @gmail.com à la fin." %>
 
+          <%= f.password_field :password,
+                      required: true,
+                      hide_label: true,
+                      placeholder: " Entrez votre mot de passe:",
+                      input_html: { autocomplete: "new-password" },
+                      help: "le mot de passe doit 6 lettres au moins." %>
+
+          <%= f.password_field :password_confirmation,
+                      required: true,
+                      hide_label: true,
+                      placeholder:  'retaper le mot de passe:',
+                      input_html: { autocomplete: "new-password" },
+                      help: "confirmez votre mot de passe." %>
+
+          <%= f.hidden_field :role, value: "X12" %>
+        <div class="form-actions">
+          <%= f.submit "Inscription", class: 'btn btn-success font-bold'%>
         </div>
-      </div>
-
-      <div class="card-footer text-muted">
-            <span class="mx-auto">
-               <span class="">Objectif: 100% au BAC 2020</span>
-               <span> CHATLN Education ©. 2020</span>
-            </span>
-          </div>
-
-    </div>
+      <% end %>
   </div>
 </div>

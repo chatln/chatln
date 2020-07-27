@@ -19,18 +19,13 @@
   </head>
 
   <body class="bg-gray-200">
+    <div class="mt-20">
+      <%= render "shared/nav/notifs/devise_notif" %>
+      <%= render "shared/nav/navbar" %>
+      <%= yield %>
+    </div>
 
-      <div class="row">
-        <div class="col-12">
-          <%= render "shared/nav/notifs/devise_notif" %>
-          <%= render "shared/nav/navbar" %>
-          <div class="col-md-12 mt-8 md:mt-12">
-            <%= yield %>
-          </div>
-        </div>
-      </div>
-
-<!-- JS components/!-->
+  <!-- JS components/!-->
   <%= render "shared/js/components" %>
   </body>
 </html>

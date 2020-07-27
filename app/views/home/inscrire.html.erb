@@ -52,3 +52,70 @@
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+<div class="row">
+  <div class="col-12 col-md-7 col-lg-7 mx-auto">
+    <div class="card border-secondary container">
+      <h2 class="font-bold text-4xl text-center">CHATLN</h2>
+      <p class="mx-auto font-black">
+        Inscrit toi sur la plateforme pour Bénéficiez des sujets déjà corrigé et ajouter ton sujets
+      </p>
+      <p class="mx-auto">
+        <span class="font-bold">Qui sait, ça peut être le sujet du Bac 2020</span>.
+      </p>
+      <hr />
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-6 text-center order-md-2">
+            <h2 class="font-bold text-center mb-2">Connexion</h2>
+
+            <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                <div class="form-inputs">
+                  <%= f.email_field :email,
+                              required: false,
+                              hide_label: true,
+                              autofocus: true,
+                              input_html: { autocomplete: "email" },
+                              placeholder: "E-mail",
+                              help: "Certain ont Utilisé leur N° Matricule et ajouter @gmail.com a la fin." %>
+                  <%= f.password_field :password,
+                              required: false,
+                              hide_label: true,
+                              placeholder:"vote mot de passe",
+                              input_html: { autocomplete: "current-password" } %>
+                  <%= f.check_box :remember_me, label: "Restez connecté", as: :boolean if devise_mapping.rememberable? %>
+                </div>
+
+                <div class="form-actions  mb-2">
+                  <%= f.submit "Connexion",  class: 'btn btn-primary font-bold'%>
+                </div>
+            <% end %>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-6 my-6 text-center order-md-1">
+            <h2 class="font-bold text-center text-3xl">Inscription</h2>
+             <p class="mx-auto text-sm mb-2">C’est rapide et facile.</p>
+
+             <%= link_to "Pour les élèves", new_user_registration_path, class: "btn btn-danger font-bold text-2xl text-center mx-auto" %>
+
+          </div>
+
+        </div>
+      </div>
+
+      <div class="card-footer text-muted">
+            <span class="mx-auto">
+               <span class="">Objectif: 100% au BAC 2020</span>
+               <span> CHATLN Education ©. 2020</span>
+            </span>
+          </div>
+
+    </div>
+  </div>
+</div>

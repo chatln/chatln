@@ -100,8 +100,6 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 
-
-
   gem 'best_errors', '~> 0.1.4'
   gem 'guard-livereload', '~> 2.5', '>= 2.5.2'
   gem 'guard', '~> 2.16', '>= 2.16.1'
