@@ -1,5 +1,16 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+      resources :users
+      resources :comments
+      resources :courses
+      resources :levels
+      resources :matieres
+      resources :rooms
+      resources :room_messages
+
+      root to: "users#index"
+    end
   #root controller: :courses, action: :index
   root to:'home#index'
   get 'home/inscrire'# prof sign up page
