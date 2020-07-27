@@ -16,8 +16,8 @@
           <!--administration</!-->
           <% if admin_role(current_user) %>
             <li class="nav-item active">
-              <%= link_to manager_index_path, class: "m-links nav-link add" do %>
-                <i class="fa fa-plus" aria-hidden="true"></i> Admin
+              <%= link_to admin_root_path, class: "m-links nav-link add" do %>
+                <i class="fa fa-plus" aria-hidden="true"></i> Administration
               <% end %>
             </li>
           <% end %>

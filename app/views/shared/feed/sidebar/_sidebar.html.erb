@@ -3,14 +3,13 @@
 <div class="container-fluid">
   <!-- Icon/!-->
   <div class="md:mt-2 md:mb-2  bg-red-300">
-
-  <span class="fil-icon mx-auto">
-      <i class="fa fa-newspaper-o mr-1"></i> Fil Matières
-  </span>
+    <span class="fil-icon m-2">
+        <i class="fa fa-newspaper-o mr-1"></i> Fil Matières
+    </span>
   </div>
   <ul class="leading-relaxed pt-2">
     <% @matieres.each do |m| %>
-     <li class="text-lg font-bold hover:no-underline"> <%= link_to m.title, m %></li>
+     <li class="text-lg font-bold"> <%= link_to m.title, m , class: "hover:no-underline hover:text-black" %></li>
     <% end %>
   </ul>
 
