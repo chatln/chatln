@@ -10,17 +10,20 @@ class User < ApplicationRecord
   has_many :matieres, through: :courses
   belongs_to :level, optional: true
   has_many :comments, through: :courses
-  #presence
+
+
+  #PRESENTE
   validates :username,
             :contact,
             :email,
-            :role,
-             presence: true
-  #unique
-  # validates :contact,
-  #           :matricule, uniqueness: true
+            :role, presence: true
 
-##### Add enum type
+
+  #UNIQUENESS
+   validates :contact,
+             :matricule, uniqueness: true
+
+#ENUM TYPE
    #enum status: [:eleve, :prof, :administration]
    #enum gender: [:femme, :homme]
 
