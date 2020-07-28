@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       resources :rooms
       resources :room_messages
 
-      root to: "users#index"
+      root to: "home#index"
     end
   #root controller: :courses, action: :index
   root to:'home#index'
@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :levels
 
   devise_for :users, :controllers => {:registrations => "registrations"}
+
 
   resources :matieres
 

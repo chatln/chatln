@@ -31,10 +31,10 @@
 
             <!-- user avatar/!-->
             <li class="nav-item active">
-              <span class="m-links nav-link">
+              <%= link_to edit_user_registration_path(@user), class: "m-links nav-link" do %>
                  <i class="fa fa-user-circle-o" aria-hidden="true"></i>
                  <%= current_user.username %>
-              </span>
+              <% end %>
             </li>
 
             <!-- create course by teacher/!-->
@@ -48,7 +48,7 @@
 
              <!-- Sign out /!-->
             <li class="nav-item active">
-              <%= link_to destroy_user_session_path, method: :delete, class:"m-links nav-link" do %>
+              <%= link_to destroy_user_session_path, method: :delete, class: "m-links nav-link" do %>
                <i class="fa fa-power-off" aria-hidden="true"></i> Déconnexion
               <% end %>
             </li>
