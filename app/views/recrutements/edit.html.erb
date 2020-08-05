@@ -1,6 +1,12 @@
-<h1>Editing Recrutement</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-8">
+        <h1 class="text-center mb-4 font-bold text-3xl">Editer l'Annonce: </h1>
+        <div class="mx-auto">
+          <%= render 'form', recrutement: @recrutement %>
+        </div>
 
-<%= render 'form', recrutement: @recrutement %>
-
-<%= link_to 'Show', @recrutement %> |
-<%= link_to 'Back', recrutements_path %>
+      </div>
+    </div>
+  </div>
