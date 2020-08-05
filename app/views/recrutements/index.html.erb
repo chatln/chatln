@@ -1,35 +1,87 @@
-<p id="notice"><%= notice %></p>
+<div class="card">
+  <div class="card-header-r mx-auto m-4">
+    <p class="font-bold text-5xl">22 Jobs de rêve disponibles chez superprof !</p>
+  </div>
+</div>
+<div class="row bg-gray-200">
+  <div class="col-12 col-md-4 col-lg-4">
+    <div class="container mt-2 mx-auto">
+      <!-- prof/!-->
+      <div class="card card-block">
+        <!-- Job Title/!-->
+        <div class=" font-bold text-white mx-auto text-3xl bg-red-400">
+          <p class="m-4">
+            Professeur Partenaire de Math
+          </p>
+        </div>
+        <!-- Apply button/!-->
+        <p class="mx-auto font-bold m-4">Je m'inscris !</p>
+        <!-- State/!-->
+        <p class="text-right text-sm font-bold m-1"><i class="fa fa-user-circle-o" aria-hidden="true"></i> 15 Profs</p>
+      </div>
+    </div>
+  </div>
 
-<h1>Recrutements</h1>
+  <div class="col-12 col-md-4 col-lg-4">
+    <div class="container mt-2 mx-auto">
+      <!-- prof/!-->
+      <div class="card card-block">
+        <!-- Job Title/!-->
+        <div class=" font-bold text-white mx-auto text-3xl bg-blue-400">
+          <p class="m-4">
+            Prof City Manager Pour N'douci
+          </p>
+        </div>
+        <!-- Apply button/!-->
+        <p class="mx-auto font-bold m-4">Je m'inscris !</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th>City</th>
-      <th>Role</th>
-      <th>Status</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+        <!-- State/!-->
+        <p class="text-right text-sm font-bold m-1"><i class="fa fa-user-circle-o" aria-hidden="true"></i> 1 Prof</p>
+      </div>
+    </div>
+  </div>
 
-  <tbody>
-    <% @recrutements.each do |recrutement| %>
-      <tr>
-        <td><%= recrutement.title %></td>
-        <td><%= recrutement.content %></td>
-        <td><%= recrutement.city %></td>
-        <td><%= recrutement.role %></td>
-        <td><%= recrutement.status %></td>
-        <td><%= link_to 'Show', recrutement %></td>
-        <td><%= link_to 'Edit', edit_recrutement_path(recrutement) %></td>
-        <td><%= link_to 'Destroy', recrutement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div class="col-12 col-md-4 col-lg-4">
+    <div class="container mt-2 mx-auto">
+      <!-- prof/!-->
+      <div class="card card-block">
+        <!-- Job Title/!-->
+        <div class=" font-bold text-white mx-auto text-3xl bg-red-400">
+          <p class="m-4">
+            Professeur Partenaire de Math
+          </p>
+        </div>
+        <!-- Apply button/!-->
+        <p class="mx-auto font-bold m-4">Je m'inscris !</p>
+        <!-- State/!-->
+        <p class="text-right text-sm font-bold m-1"><i class="fa fa-user-circle-o" aria-hidden="true"></i> 15 Profs</p>
+      </div>
+    </div>
+  </div>
 
-<br>
+  <div class="col-12 col-md-4 col-lg-4">
+    <div class="container mt-2 mx-auto">
+      <!-- prof/!-->
+      <div class="card card-block">
+        <!-- Job Title/!-->
+        <div class=" font-bold text-white mx-auto text-3xl bg-blue-400">
+          <p class="m-4">
+            Prof City Manager Pour Agboville
+          </p>
+        </div>
+        <!-- Apply button/!-->
+        <p class="mx-auto font-bold m-4">Je m'inscris !</p>
 
-<%= link_to 'New Recrutement', new_recrutement_path %>
+        <!-- State/!-->
+        <p class="text-right text-sm font-bold m-1"><i class="fa fa-user-circle-o" aria-hidden="true"></i> 1 Prof</p>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+
+

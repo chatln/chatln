@@ -1,0 +1,21 @@
+
+
+
+<%= @recrutements.each do |r| %>
+<div class="col-12 col-md-4 col-lg-4">
+  <div class="card border container">
+    <!-- title!-->
+      <h1 class=" card-text no-underline mt-2 ">
+        <%= link_to r, class: "text-lg leading-tight font-semibold text-gray-900 hover:no-underline hover:font-semibold hover:text-lg"  do %>
+          <%= r.title %>
+        <% end %>
+      </h1>
+
+    <%= sanitize(r.content) %>
+    <%= r.city %>
+    <%= r.role %>
+    <%= r.status %>
+
+  </div>
+</div>
+<% end %>
