@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Recrutements</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th>City</th>
+      <th>Role</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recrutements.each do |recrutement| %>
+      <tr>
+        <td><%= recrutement.title %></td>
+        <td><%= recrutement.content %></td>
+        <td><%= recrutement.city %></td>
+        <td><%= recrutement.role %></td>
+        <td><%= recrutement.status %></td>
+        <td><%= link_to 'Show', recrutement %></td>
+        <td><%= link_to 'Edit', edit_recrutement_path(recrutement) %></td>
+        <td><%= link_to 'Destroy', recrutement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Recrutement', new_recrutement_path %>
