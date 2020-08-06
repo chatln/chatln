@@ -1,84 +1,55 @@
 <div class="card">
   <div class="card-header-r mx-auto m-4">
-    <p class="font-bold text-5xl">22 Jobs de rêve disponibles chez superprof !</p>
+    <p class="font-bold text-5xl">32 Jobs de  disponibles chez CHATLN !</p>
+    <p class="mt-20">Nous partageons le connaissances dans 25 Villes de la Cote d'Ivoire. Rejoignez nous !</p>
   </div>
 </div>
+
+
 <div class="row bg-gray-200">
+<!-- each recrutement/!-->
+<% @recrutements.each do |recrute| %>
+
+<% if recrute.role != "City Manager" %>
   <div class="col-12 col-md-4 col-lg-4">
     <div class="container mt-2 mx-auto">
       <!-- prof/!-->
-      <div class="card card-block">
+      <div class="card card-block card-r">
         <!-- Job Title/!-->
-        <div class=" font-bold text-white mx-auto text-3xl bg-red-400">
-          <p class="m-4">
-            Professeur Partenaire de Math
-          </p>
-        </div>
+        <%= link_to recrute, class: "font-bold text-white mx-auto text-2xl bg-red-400 hover:no-underline" do %>
+            <%= recrute.title %>
+        <% end %>
         <!-- Apply button/!-->
-        <p class="mx-auto font-bold m-4">Je m'inscris !</p>
+        <%= link_to recrute, class: "mx-auto font-bold m-4 bg-gray-100 hover:no-underline hover:font-bold" do %>Je m'inscris !
+        <% end %>
         <!-- State/!-->
-        <p class="text-right text-sm font-bold m-1"><i class="fa fa-user-circle-o" aria-hidden="true"></i> 15 Profs</p>
+        <%= link_to recrute, class: "text-right text-sm font-bold m-1 hover:no-underline" do %>
+            <i class="fa fa-user-circle-o" aria-hidden="true"></i> <%= recrute.count_job %> Profs <%= recrute.city %>
+         <% end %>
       </div>
     </div>
   </div>
-
+<% else %>
   <div class="col-12 col-md-4 col-lg-4">
     <div class="container mt-2 mx-auto">
       <!-- prof/!-->
-      <div class="card card-block">
+      <div class="card card-block card-r">
         <!-- Job Title/!-->
-        <div class=" font-bold text-white mx-auto text-3xl bg-blue-400">
-          <p class="m-4">
-            Prof City Manager Pour N'douci
-          </p>
-        </div>
+        <%= link_to recrute, class: "font-bold text-white mx-auto text-2xl bg-blue-400 hover:no-underline" do %>
+            <%= recrute.title %>
+        <% end %>
         <!-- Apply button/!-->
-        <p class="mx-auto font-bold m-4">Je m'inscris !</p>
-
+        <%= link_to recrute, class: "mx-auto font-bold m-4 bg-gray-100 hover:no-underline hover:font-bold" do %>Je m'inscris !
+        <% end %>
         <!-- State/!-->
-        <p class="text-right text-sm font-bold m-1"><i class="fa fa-user-circle-o" aria-hidden="true"></i> 1 Prof</p>
+        <%= link_to recrute, class: "text-right text-sm font-bold m-1 hover:no-underline" do %>
+            <i class="fa fa-user-circle-o" aria-hidden="true"></i> <%= recrute.count_job %> Prof <%= recrute.city %>
+         <% end %>
       </div>
     </div>
   </div>
-
-  <div class="col-12 col-md-4 col-lg-4">
-    <div class="container mt-2 mx-auto">
-      <!-- prof/!-->
-      <div class="card card-block">
-        <!-- Job Title/!-->
-        <div class=" font-bold text-white mx-auto text-3xl bg-red-400">
-          <p class="m-4">
-            Professeur Partenaire de Math
-          </p>
-        </div>
-        <!-- Apply button/!-->
-        <p class="mx-auto font-bold m-4">Je m'inscris !</p>
-        <!-- State/!-->
-        <p class="text-right text-sm font-bold m-1"><i class="fa fa-user-circle-o" aria-hidden="true"></i> 15 Profs</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-12 col-md-4 col-lg-4">
-    <div class="container mt-2 mx-auto">
-      <!-- prof/!-->
-      <div class="card card-block">
-        <!-- Job Title/!-->
-        <div class=" font-bold text-white mx-auto text-3xl bg-blue-400">
-          <p class="m-4">
-            Prof City Manager Pour Agboville
-          </p>
-        </div>
-        <!-- Apply button/!-->
-        <p class="mx-auto font-bold m-4">Je m'inscris !</p>
-
-        <!-- State/!-->
-        <p class="text-right text-sm font-bold m-1"><i class="fa fa-user-circle-o" aria-hidden="true"></i> 1 Prof</p>
-      </div>
-    </div>
-  </div>
-
-
+<% end %>
+<% end %>
 </div>
 
 

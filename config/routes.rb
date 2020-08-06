@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 
 
+  resources :job_posts
   resources :recrutements
   #root controller: :courses, action: :index
   root to:'home#index'

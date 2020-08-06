@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nom complet:</strong>
+  <%= @job_post.nom_complet %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @job_post.city %>
+</p>
+
+<p>
+  <strong>Matiere:</strong>
+  <%= @job_post.matiere %>
+</p>
+
+<p>
+  <strong>Promotion:</strong>
+  <%= @job_post.promotion %>
+</p>
+
+<p>
+  <strong>Experience:</strong>
+  <%= @job_post.experience %>
+</p>
+
+<p>
+  <strong>Nb classe:</strong>
+  <%= @job_post.nb_classe %>
+</p>
+
+<p>
+  <strong>Contact first:</strong>
+  <%= @job_post.contact_first %>
+</p>
+
+<p>
+  <strong>Contact sec:</strong>
+  <%= @job_post.contact_sec %>
+</p>
+
+<p>
+  <strong>Know it:</strong>
+  <%= @job_post.Know_IT %>
+</p>
+
+<p>
+  <strong>School:</strong>
+  <%= @job_post.school %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @job_post.gender %>
+</p>
+
+<%= link_to 'Edit', edit_job_post_path(@job_post) %> |
+<%= link_to 'Back', job_posts_path %>

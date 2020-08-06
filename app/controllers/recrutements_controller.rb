@@ -10,6 +10,7 @@ class RecrutementsController < ApplicationController
   # GET /recrutements/1
   # GET /recrutements/1.json
   def show
+    @recrutements = Recrutement.all.order('created_at desc')
   end
 
   # GET /recrutements/new
@@ -64,11 +65,11 @@ class RecrutementsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_recrutement
-      @recrutement = Recrutement.find(params[:id])
+      @recrutement = Recrutement.friendly.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def recrutement_params
-      params.require(:recrutement).permit(:title, :content, :city, :role, :status)
+      params.require(:recrutement).permit(:title, :content, :city, :role, :status, :count_job)
     end
 end

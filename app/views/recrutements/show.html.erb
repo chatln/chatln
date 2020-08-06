@@ -1,29 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @recrutement.title %>
-</p>
+<div class="card">
+  <div class="card-header-r mx-auto m-4">
+    <p class="font-bold md:text-5xl sm:text-2xl"> <%= @recrutement.title %></p>
+    <p class="mt-20">Nous partageons le connaissances dans 25 Villes de la Cote d'Ivoire. Rejoignez nous !</p>
+  </div>
+</div>
+<div class="container mx-auto">
+  <div class="row md:ml-4 mt-2">
+    <div class="col-12 col-md-6 col-lg-6 card">
+      <%= sanitize(@recrutement.content) %>
+    </div>
+    <div class="col-12 col-md-4 col-lg-4">
+      <%= render "shared/job_posts/apply_job" %>
+    </div>
+  </div>
 
-<p>
-  <strong>Content:</strong>
-  <%= sanitize(@recrutement.content) %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @recrutement.city %>
-</p>
-
-<p>
-  <strong>Role:</strong>
-  <%= @recrutement.role %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @recrutement.status %>
-</p>
-
-<%= link_to 'Edit', edit_recrutement_path(@recrutement) %> |
-<%= link_to 'Back', recrutements_path %>
+</div>
