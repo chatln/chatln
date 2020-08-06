@@ -1,5 +1,7 @@
 class Recrutement < ApplicationRecord
 
+  has_many :recrutements
+
   #VALIDATES (validates presence: true )
   validates :title,
         :content,

@@ -12,7 +12,7 @@ class CreateJobPosts < ActiveRecord::Migration[5.2]
       t.string :Know_IT
       t.string :school
       t.string :gender
-
+      t.bigint :recrutement_id
       t.timestamps
     end
   end

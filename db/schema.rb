@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(version: 2020_08_06_150815) do
     t.string "Know_IT"
     t.string "school"
     t.string "gender"
+    t.bigint "recrutement_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

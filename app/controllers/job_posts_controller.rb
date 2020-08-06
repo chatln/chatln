@@ -24,12 +24,11 @@ class JobPostsController < ApplicationController
   # POST /job_posts
   # POST /job_posts.json
   def create
-    @job_post = JobPost.new(job_post_params)
+    @job_post = @recrutement.jobPosts.build(job_post_params)
 
     respond_to do |format|
       if @job_post.save
-        format.html { redirect_to @job_post, notice: 'Job post was successfully created.' }
-        format.json { render :show, status: :created, location: @job_post }
+        format.html { redirect_to @recrutement, notice: 'Job post was successfully created.' }
       else
         format.html { render :new }
         format.json { render json: @job_post.errors, status: :unprocessable_entity }
@@ -64,11 +63,11 @@ class JobPostsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_job_post
-      @job_post = JobPost.find(params[:id])
+      @job_post = JobPost.friendly.find(params[:recrutement_id])
     end
 
     # Only allow a list of trusted parameters through.
     def job_post_params
-      params.require(:job_post).permit(:nom_complet, :city, :matiere, :promotion, :experience, :nb_classe, :contact_first, :contact_sec, :Know_IT, :school, :gender)
+      params.require(:job_post).permit(:nom_complet, :city, :matiere, :promotion, :experience, :nb_classe, :contact_first, :contact_sec, :Know_IT, :school, :gender, :recrutement_id)
     end
 end
