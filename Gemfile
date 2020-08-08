@@ -60,6 +60,12 @@ gem 'friendly_id', '~> 5.3'
 gem 'bootstrap', '~> 4.5.0'
 gem 'jquery-rails'
 
+###### JQuery UI RAILS  #######
+#gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
+#gem 'jquery-validation-rails', '~> 1.19'
+#gem 'jquery-slick-rails', '~> 1.9'
+#gem 'jquery-minicolors-rails', '~> 2.2', '>= 2.2.6.2'
+#
 
 ####### STYLES ############
 gem 'webpacker', '~> 5.1', '>= 5.1.1'

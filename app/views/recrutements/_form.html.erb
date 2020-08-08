@@ -8,49 +8,58 @@
     </div>
 
     <div class="row">
-        <div class="col-5  col-md-3 col-lg-3">
+      <div class="col-5  col-md-2 col-lg-2">
+          <div class="input-form">
+            <span class="select">
+              <%= f.select :matiere,
+                   Recrutement::MATIERES,
+                   hide_label: true,
+                   prompt: "La matière:" %>
+
+            </span>
+          </div>
+        </div>
+
+          <div class="col-5  col-md-2 col-lg-2">
           <div class="input-form">
             <span class="select">
               <%= f.select :city,
                    Recrutement::CITY,
                    hide_label: true,
-                   prompt: "La ville:",
-                   placeholder:"Ville Job:" %>
+                   prompt: "La ville:" %>
 
             </span>
           </div>
         </div>
-         <div class="col-5  col-md-3 col-lg-3">
+         <div class="col-5  col-md-2 col-lg-2">
           <div class="input-form">
             <span class="select">
               <%= f.select :status,
                    Recrutement::STATUS,
                    hide_label: true,
-                   placeholder:"Status:" %>
+                   prompt:"Status:" %>
 
             </span>
           </div>
         </div>
-        <div class="col-5 col-md-3 col-lg-3">
+        <div class="col-5 col-md-2 col-lg-2">
           <div class="input-form">
             <span class="select">
               <%= f.select :role,
                    Recrutement::ROLE,
                    hide_label: true,
-                   prompt: "role:",
-                   placeholder:"Ex: City Manager:" %>
+                   prompt: "role:" %>
             </span>
           </div>
         </div>
 
-        <div class="col-5 col-md-3 col-lg-3">
+        <div class="col-5 col-md-2 col-lg-2">
           <div class="input-form">
             <span class="select">
               <%= f.select :count_job,
                    Recrutement::COUNT_JOB,
                    hide_label: true,
-                   prompt: "Postes:",
-                   placeholder:"Postes Ouvert:" %>
+                   prompt: "Postes:" %>
             </span>
           </div>
         </div>

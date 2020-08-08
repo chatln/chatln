@@ -10,6 +10,7 @@ module ApplicationHelper
     end
   end
 
+
   #SIGN UP AND SIGN IN FORM ANYWHERE
   def resource_name
     :user

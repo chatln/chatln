@@ -1,13 +1,14 @@
 class Recrutement < ApplicationRecord
 
-  has_many :recrutements
+  has_many :job_posts
 
   #VALIDATES (validates presence: true )
   validates :title,
-        :content,
-        :slug,
-        :role,
-        :count_job, presence: true
+            :content,
+            :slug,
+            :role,
+            :matiere,
+            :count_job, presence: true
 
 
   #slug
@@ -18,9 +19,11 @@ class Recrutement < ApplicationRecord
       title_changed?
   end
 
-  #COSTANTE
-STATUS= ["Personnel", "Prof Partenaire"]
-ROLE= ["City Manager", "Professeur Partenaire"]
+  #CONSTANTES
+STATUS= ["Ouvert", "Fermé"]
+ROLE= ["Prof Partenaire CHATLN", "City Manager"]
 CITY= ["Tiassalé", "N'Douci","Agboville","Odienné","Divo", "Kouto","Man","Bouaké","Yamoussokro","Autres villes"]
 COUNT_JOB= ["1", "+5", "+10", "+15", "+20"]
+MATIERES= ["Fr", "HG", "ANGLAIS", "ESPAGNOL", "ALLEMAND", "EDHC", "MATH", "PC", "SVT", "CITY MANAGER"]
+
 end

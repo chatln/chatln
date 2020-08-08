@@ -1,7 +1,10 @@
 <div class="card">
   <div class="card-header-r mx-auto m-4">
-    <p class="font-bold text-5xl">32 Jobs de  disponibles chez CHATLN !</p>
-    <p class="mt-20">Nous partageons le connaissances dans 25 Villes de la Cote d'Ivoire. Rejoignez nous !</p>
+    <p class="font-bold text-5xl">
+      590 Jobs pour les profs partenaires sur CHATLN !</p>
+    <p class="mt-20">
+      Nous partageons le connaissances dans 45 Villes de la Côte d'Ivoire. Rejoignez nous !
+    </p>
   </div>
 </div>
 
@@ -14,11 +17,13 @@
   <div class="col-12 col-md-4 col-lg-4">
     <div class="container mt-2 mx-auto">
       <!-- prof/!-->
-      <div class="card card-block card-r">
+      <div class="card card-block card-r ">
         <!-- Job Title/!-->
-        <%= link_to recrute, class: "font-bold text-white mx-auto text-2xl bg-red-400 hover:no-underline" do %>
+        <div class="card-header bg-red-400">
+        <%= link_to recrute, class: "font-bold text-white mx-auto text-2xl hover:no-underline" do %>
             <%= recrute.title %>
         <% end %>
+        </div>
         <!-- Apply button/!-->
         <%= link_to recrute, class: "mx-auto font-bold m-4 bg-gray-100 hover:no-underline hover:font-bold" do %>Je m'inscris !
         <% end %>
@@ -35,9 +40,11 @@
       <!-- prof/!-->
       <div class="card card-block card-r">
         <!-- Job Title/!-->
-        <%= link_to recrute, class: "font-bold text-white mx-auto text-2xl bg-blue-400 hover:no-underline" do %>
-            <%= recrute.title %>
-        <% end %>
+        <div class="card-header bg-blue-400">
+          <%= link_to recrute, class: "font-bold text-white mx-auto text-2xl hover:no-underline" do %>
+              <%= recrute.title %>
+          <% end %>
+        </div>
         <!-- Apply button/!-->
         <%= link_to recrute, class: "mx-auto font-bold m-4 bg-gray-100 hover:no-underline hover:font-bold" do %>Je m'inscris !
         <% end %>

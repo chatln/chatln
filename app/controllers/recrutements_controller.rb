@@ -29,7 +29,7 @@ class RecrutementsController < ApplicationController
 
     respond_to do |format|
       if @recrutement.save
-        format.html { redirect_to @recrutement, notice: 'Recrutement was successfully created.' }
+        format.html { redirect_to @recrutement }
         format.json { render :show, status: :created, location: @recrutement }
       else
         format.html { render :new }
@@ -70,6 +70,6 @@ class RecrutementsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def recrutement_params
-      params.require(:recrutement).permit(:title, :content, :city, :role, :status, :count_job)
+      params.require(:recrutement).permit(:title, :content, :city, :role, :status, :matiere, :count_job)
     end
 end
