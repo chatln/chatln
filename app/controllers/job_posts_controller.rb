@@ -1,6 +1,6 @@
 class JobPostsController < ApplicationController
   before_action :set_job_post, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_recrutement
   # GET /job_posts
   # GET /job_posts.json
   def index
@@ -24,17 +24,21 @@ class JobPostsController < ApplicationController
   # POST /job_posts
   # POST /job_posts.json
   def create
-    @job_post = @recrutement.jobPosts.build(job_post_params)
-
+    @job_post = @recrutement.jobposts.build(job_post_params)
+# dans le controller fais la correspondance: City, Matiere
+    @job_post.city = @recrutement.city
+    @job_post.matiere = @recrutement.matiere
     respond_to do |format|
       if @job_post.save
-        format.html { redirect_to @recrutement, notice: 'Job post was successfully created.' }
+        format.html { redirect_to @recrutement }
+        format.js {} # renders create posts
       else
         format.html { render :new }
         format.json { render json: @job_post.errors, status: :unprocessable_entity }
       end
     end
   end
+
 
   # PATCH/PUT /job_posts/1
   # PATCH/PUT /job_posts/1.json
@@ -66,8 +70,14 @@ class JobPostsController < ApplicationController
       @job_post = JobPost.friendly.find(params[:recrutement_id])
     end
 
+    def set_recrutement
+      @recrutement = Recrutement.friendly.find(params[:recrutement_id])
+    end
+
     # Only allow a list of trusted parameters through.
     def job_post_params
       params.require(:job_post).permit(:nom_complet, :city, :matiere, :promotion, :experience, :nb_classe, :contact_first, :contact_sec, :Know_IT, :school, :gender, :recrutement_id)
     end
 end
+
+

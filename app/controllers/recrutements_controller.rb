@@ -25,7 +25,7 @@ class RecrutementsController < ApplicationController
   # POST /recrutements
   # POST /recrutements.json
   def create
-    @recrutement = Recrutement.new(recrutement_params)
+    @recrutement = current_user.recrutements.build(recrutement_params)
 
     respond_to do |format|
       if @recrutement.save

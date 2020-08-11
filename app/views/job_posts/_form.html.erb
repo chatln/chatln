@@ -1,21 +1,42 @@
 
-<%= bootstrap_form_for([@recrutemet, @recrutemet.job_posts.build], remote: true) do |f| %>
+<div class="m-4">
 
-  <div class="form-inputs">
-    <%= f.input :nom_complet %>
-    <%= f.input :city %>
-    <%= f.input :matiere %>
-    <%= f.input :promotion %>
-    <%= f.input :experience %>
-    <%= f.input :nb_classe %>
-    <%= f.input :contact_first %>
-    <%= f.input :contact_sec %>
-    <%= f.input :Know_IT %>
-    <%= f.input :school %>
-    <%= f.input :gender %>
-  </div>
+  <%= bootstrap_form_for([@recrutement, @recrutement.job_posts.build], remote: true) do |f| %>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+    <div class="form-inputs">
+      <%= f.text_field :nom_complet,
+      label: "Nom complet",
+      placeholder: "Ex: Kam kara" %>
+      <%= f.text_field :contact,
+      label: "Contact" %>
+
+      <%= f.text_field :contact_sec,
+      label: 'Contact WhatsApp',
+      placeholder: "Numéro WhatsApp" %>
+
+      <%= f.text_field :school,
+      label:"Nom de Vote Etablissement principal",
+       placeholder: "Etablissement" %>
+
+      <%= f.text_field :nb_classe %>
+
+      <%= f.check_box :promotion,label: "3e" %>
+      <%= f.check_box :promotion,label: "Tle A" %>
+      <%= f.check_box :promotion,label: "Tle D" %>
+      <%= f.check_box :promotion,label: "Tle C" %>
+      <%= f.text_field :experience  %>
+
+      <%= f.radio_button :Know_IT, 0, label: "Debutant", inline: true %>
+      <%= f.radio_button :Know_IT, 1, label: "basic", inline: true %>
+      <%= f.radio_button :Know_IT, 2, label: "Autonome", inline: true %>
+
+      <%= f.radio_button :gender, 0, label: "Femme", inline: true %>
+      <%= f.radio_button :gender, 1, label: "Homme", inline: true %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit "Postulez", class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+
+</div>

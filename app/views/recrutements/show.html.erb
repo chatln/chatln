@@ -10,13 +10,16 @@
   <div class="row md:ml-4 mt-2">
     <div class="col-12 col-md-6 col-lg-6 card">
       <%= sanitize(@recrutement.content) %>
-
     </div>
     <div class="col-12 col-md-4 col-lg-4">
     <!-- option add new Items Job/!-->
 
     <!-- Apply form/!-->
-      <%= render "shared/job_posts/apply_job" %>
+      <div class="card">
+        <div id="postule_fomr">
+          <%= render 'job_posts/form' %>
+        </div>
+      </div>
     </div>
   </div>
 

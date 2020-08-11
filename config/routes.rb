@@ -2,26 +2,33 @@ Rails.application.routes.draw do
 
 
 
-  resources :job_posts
-  resources :recrutements
   #root controller: :courses, action: :index
   root to:'home#index'
   get 'home/inscrire'# prof sign up page
-  resources :levels
+  get 'manager/index'
 
   devise_for :users, :controllers => {:registrations => "registrations"}
 
 
-  resources :matieres
 
+  #COURSE
   resources :courses do
     resources :comments
   end
 
+  #RECRUTEMENTS
+  resources :recrutements do
+  resources :job_posts
+
+  end
+
+  #GROUPE D'ETUDE
   resources :room_messages
   resources :rooms
-  get 'manager/index'
 
+
+  resources :matieres
+  resources :levels
 
   namespace :admin do
       resources :users
