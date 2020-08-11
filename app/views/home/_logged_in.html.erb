@@ -3,9 +3,14 @@
   <div class="col-12 col-md-3 col-lg-3">
    <%= render "shared/feed/sidebar/sidebar" %>
   </div>
+
   <div class="col-12 col-md-7 col-lg-7">
     <!-- session en direct ou pre-session/!-->
-
+    <div class="card">
+      <p class="mt-4 mb-4 mx-auto">
+        <%= current_user.username %> session en direct
+      </p>
+    </div>
     <!-- feed main/!-->
    <%= render "shared/feed/course/feed_course" %>
   </div>
