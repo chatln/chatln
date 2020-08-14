@@ -3,38 +3,69 @@
 
   <%= bootstrap_form_for([@recrutement, @recrutement.job_posts.build], remote: true) do |f| %>
 
-    <div class="form-inputs">
+    <div class="form-inputs ">
       <%= f.text_field :nom_complet,
       label: "Nom complet",
       placeholder: "Ex: Kam kara" %>
       <%= f.text_field :contact,
-      label: "Contact" %>
+      label: "Contact", placeholder: "Ex: 44320020" %>
 
-      <%= f.text_field :contact_sec,
+      <%= f.text_field :contact_whatsapp,
       label: 'Contact WhatsApp',
       placeholder: "Numéro WhatsApp" %>
 
       <%= f.text_field :school,
-      label:"Nom de Vote Etablissement principal",
-       placeholder: "Etablissement" %>
+      label:"Votre Etablissement principal",
+       placeholder: "Etablissement", help: "école dans laquelle vous avez assez de classe" %>
 
-      <%= f.text_field :nb_classe %>
+      <hr>
+      <div>
+      <br>
+      <p class="font-bold">Nombre de classe Enseigné</p>
+      <%= f.radio_button :nb_classe,  0, label: "1 classe", inline: true %>
+      <%= f.radio_button :nb_classe,  1, label: "+2 classes", inline: true %>
+      <%= f.radio_button :nb_classe,  2, label: " 4 classes et +", inline: true %>
+      <small>Tous les niveaux (6e-Tle)</small>
+      </div>
 
-      <%= f.check_box :promotion,label: "3e" %>
-      <%= f.check_box :promotion,label: "Tle A" %>
-      <%= f.check_box :promotion,label: "Tle D" %>
-      <%= f.check_box :promotion,label: "Tle C" %>
-      <%= f.text_field :experience  %>
+      <hr>
+      <div class="custom-control">
+      <br>
+      <p class="font-bold">Année dans l'enseignement: </p>
+      <%= f.radio_button :experience, 0, label: "1 ans", inline: true %>
+      <%= f.radio_button :experience, 1, label: "+2 ans", inline: true %>
+      <%= f.radio_button :experience, 2, label: "4 ans et +", inline: true %>
+      </div>
 
-      <%= f.radio_button :Know_IT, 0, label: "Debutant", inline: true %>
-      <%= f.radio_button :Know_IT, 1, label: "basic", inline: true %>
-      <%= f.radio_button :Know_IT, 2, label: "Autonome", inline: true %>
+      <hr>
+      <div class="custom-control">
+      <br>
+      <p class="font-bold">Niveaux Enseigné: </p>
+      <%= f.radio_button :promotion, 0, label: "1er Cycle", inline: true %>
+      <%= f.radio_button :promotion, 1, label: "Sec Cycle" , inline: true %>
+      <%= f.radio_button :promotion, 2, label: "Les deux" , inline: true %>
 
-      <%= f.radio_button :gender, 0, label: "Femme", inline: true %>
-      <%= f.radio_button :gender, 1, label: "Homme", inline: true %>
+      </div>
+
+      <hr>
+      <div class="custom-control custom-radio">
+      <br>
+      <p>Connaissance Informatique</p>
+        <%= f.radio_button :know_it, 0, label: "Debutant", inline: true %>
+        <%= f.radio_button :know_it, 1, label: "basic", inline: true %>
+        <%= f.radio_button :know_it, 2, label: "Autonome", inline: true %>
+      </div>
+
+      <hr>
+      <div class="custom-control custom-radio custom-control-inline">
+      <p class="font-bold">Genre:</p>
+        <%= f.radio_button :gender, 0, label: "Femme", inline: true %>
+        <%= f.radio_button :gender, 1, label: "Homme", inline: true %>
+      </div>
     </div>
 
-    <div class="form-actions">
+
+    <div class="form-actions mt-2">
       <%= f.submit "Postulez", class: 'btn btn-primary' %>
     </div>
   <% end %>

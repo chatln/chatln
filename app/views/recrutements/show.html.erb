@@ -1,26 +1,116 @@
-<p id="notice"><%= notice %></p>
-
-<div class="card">
-  <div class="card-header-r mx-auto m-4">
-    <p class="font-bold md:text-5xl sm:text-2xl"> <%= @recrutement.title %></p>
-    <p class="mt-20">Nous partageons le connaissances dans 45 Villes de la Côte d'Ivoire. Rejoignez nous !</p>
+<!-- prof recutement show page/!-->
+<!--
+  utiliser JS pour personnaliser les bg et les options d'envoi
+  /!-->
+<% if @recrutement.role != "City Manager" %>
+   <div class="card bg-blue-400">
+    <div class="card-header-r mx-auto m-4">
+      <p class="font-bold md:text-5xl sm:text-2xl"> <%= @recrutement.title %></p>
+      <p class="mt-20">Nous partageons le connaissances dans 45 Villes de la Côte d'Ivoire. Rejoignez nous !</p>
+    </div>
   </div>
-</div>
+
 <div class="container mx-auto">
   <div class="row md:ml-4 mt-2">
-    <div class="col-12 col-md-6 col-lg-6 card">
-      <%= sanitize(@recrutement.content) %>
-    </div>
-    <div class="col-12 col-md-4 col-lg-4">
-    <!-- option add new Items Job/!-->
-
-    <!-- Apply form/!-->
+    <div class="col-12 col-md-6 col-lg-6">
       <div class="card">
-        <div id="postule_fomr">
-          <%= render 'job_posts/form' %>
+        <span class="m-2">
+          <%= sanitize(@recrutement.content) %>
+        </span>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-4 col-lg-4">
+    <!-- postuler/!-->
+    <div class="card">
+      <span class="ml-2">
+        <div class="location">
+          <i class="fa fa-home"></i> : <%= @recrutement.city %>
         </div>
+        <div class="status-job">
+          <i class="fa fa-square"></i> : <%= @recrutement.status %>
+        </div>
+      </span>
+      <p class="mx-auto mb-2">
+
+         <button type="button" class="btn btn-primary mt-4 mx-auto mb-2" data-toggle="modal" data-target="#exampleModalLong">
+            Je postule !
+          </button>
+
+      </p>
+    </div>
+  </div>
+  </div>
+</div>
+<% else %>
+<!-- City Manager/!-->
+  <div class="card bg-red-400">
+    <div class="card-header-r mx-auto m-4">
+      <p class="font-bold md:text-5xl sm:text-2xl"> <%= @recrutement.title %></p>
+      <p class="mt-20">Nous partageons le connaissances dans 45 Villes de la Côte d'Ivoire. Rejoignez nous !</p>
+    </div>
+  </div>
+
+<div class="container mx-auto">
+  <div class="row md:ml-4 mt-2">
+    <div class="col-12 col-md-6 col-lg-6">
+      <div class="card">
+        <span class="m-2">
+          <%= sanitize(@recrutement.content) %>
+        </span>
+      </div>
+    </div>
+
+      <div class="col-12 col-md-4 col-lg-4">
+      <!-- postuler/!-->
+        <div class="card ">
+          <span class="ml-2">
+            <div class="location">
+              <i class="fa fa-home"></i> : <%= @recrutement.city %>
+            </div>
+            <div class="status-job">
+              <i class="fa fa-square"></i> : <%= @recrutement.status %>
+            </div>
+          </span>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary mt-4 mx-auto mb-2" data-toggle="modal" data-target="#exampleModalLong">
+            Je postule !
+          </button>
+        </div>
+      </div>
+  </div>
+  </div>
+</div>
+
+
+<% end %>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title mx-auto" id="exampleModalLongTitle">Futur Poste <span class="font-bold"><%= @recrutement.title %></span> </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Envoyez votre candidature à :</p>
+
+        <p class='font-bold'>Email: chatln.kamkara@gmail.com</p>
+
+        <p class='font-bold'>WhatsApp: 59977903</p>
+      <p>
+        <span class="font-bold">Note d'entete: </span> <span class="font-bold">Job:</span> <%= @recrutement.title %>, <span class="font-bold"> Ville:</span> <%= @recrutement.city %> !
+      </p>
+      </div>
+      <div class="modal-footer">
+
+        <a href="mailto:chatln.kamkara@gmail.com?&&subject='<%= @recrutement.title %>'", class="btn btn-primary mx-auto">Postulez Directement
+       </a>
       </div>
     </div>
   </div>
-
 </div>

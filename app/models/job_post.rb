@@ -8,11 +8,11 @@ class JobPost < ApplicationRecord
             :experience,
             :nb_classe,
             :contact,
-            :contact_sec,
-            :know_IT,
+            :contact_whatsapp,
+            :know_it,
             :school,
             :gender,
-            :Dispo_PC,
+            :personal_pc,
             :recrutement_id, presence: true
 
  #CONSTANTES

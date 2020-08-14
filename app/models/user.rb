@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :matieres, through: :courses
   belongs_to :level, optional: true
   has_many :comments, through: :courses
-
+  has_many :recrutements
 
   #PRESENTE
   validates :username,

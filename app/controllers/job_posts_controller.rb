@@ -1,6 +1,8 @@
 class JobPostsController < ApplicationController
   before_action :set_job_post, only: [:show, :edit, :update, :destroy]
   before_action :set_recrutement
+
+
   # GET /job_posts
   # GET /job_posts.json
   def index
@@ -24,10 +26,8 @@ class JobPostsController < ApplicationController
   # POST /job_posts
   # POST /job_posts.json
   def create
-    @job_post = @recrutement.jobposts.build(job_post_params)
-# dans le controller fais la correspondance: City, Matiere
-    @job_post.city = @recrutement.city
-    @job_post.matiere = @recrutement.matiere
+    @job_post = @recrutement.job_posts.build(job_post_params)
+
     respond_to do |format|
       if @job_post.save
         format.html { redirect_to @recrutement }
@@ -67,7 +67,7 @@ class JobPostsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_job_post
-      @job_post = JobPost.friendly.find(params[:recrutement_id])
+      @job_post = JobPost.find(params[:job_post_id])
     end
 
     def set_recrutement
@@ -76,7 +76,7 @@ class JobPostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def job_post_params
-      params.require(:job_post).permit(:nom_complet, :city, :matiere, :promotion, :experience, :nb_classe, :contact_first, :contact_sec, :Know_IT, :school, :gender, :recrutement_id)
+      params.require(:job_post).permit(:nom_complet, :city, :matiere, :promotion, :experience, :nb_classe, :contact, :contact_whatsapp, :know_it, :school, :gender, :recrutement_id)
     end
 end
 

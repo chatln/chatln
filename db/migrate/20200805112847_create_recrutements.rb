@@ -8,6 +8,8 @@ class CreateRecrutements < ActiveRecord::Migration[5.2]
       t.string :status
       t.string :count_job
       t.string :matiere
+      t.string :manager_mail
+      t.string :user_id
       t.string :slug
 
       t.timestamps

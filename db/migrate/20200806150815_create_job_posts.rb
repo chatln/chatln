@@ -6,11 +6,11 @@ class CreateJobPosts < ActiveRecord::Migration[5.2]
       t.string :experience
       t.string :nb_classe
       t.string :contact
-      t.string :contact_sec
-      t.string :Know_IT
+      t.string :contact_whatsapp
+      t.string :know_it
       t.string :school
       t.string :gender
-      t.string :Dispo_PC
+      t.string :personal_pc
       t.bigint :recrutement_id
       t.timestamps
     end
