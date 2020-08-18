@@ -1,0 +1,38 @@
+
+<div class="card">
+  <div class="card-header-r mx-auto m-4">
+    <p class="font-bold text-5xl">
+      Bienvenu Sur la librairie Direct Book !
+    </p>
+    <p class="mt-20">
+      Nous partageons le connaissances dans 45 Villes de la Côte d'Ivoire. Rejoignez nous !
+    </p>
+  </div>
+</div>
+
+
+<div class="row">
+<% @books.each do | book| %>
+    <div class="col-12 col-md-4 col-lg-4">
+      <div class="container mt-2 mx-auto">
+        <!-- book/!-->
+        <div class="card card-block card-r">
+          <!--Title/!-->
+          <div class="card-header bg-red-400">
+          <%= link_to book, class: "font-bold text-white mx-auto text-2xl hover:no-underline" do %>
+              <%= book.title %>
+          <% end %>
+          </div>
+          <!-- Apply button/!-->
+          <%= link_to book, class: "mx-auto font-bold m-4 bg-gray-200 hover:no-underline hover:font-bold" do %>
+            <span class=" rounded-r-md rounded-l-md">Lire</span>
+          <% end %>
+          <!-- State/!-->
+          <%= link_to book, class: "text-right text-sm font-bold m-1 hover:no-underline" do %>
+              <i class="fa fa-user-circle-o" aria-hidden="true"></i>Kam Kara
+           <% end %>
+        </div>
+      </div>
+    </div>
+<% end %>
+</div>

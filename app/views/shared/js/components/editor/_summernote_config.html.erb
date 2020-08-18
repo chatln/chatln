@@ -1,7 +1,7 @@
 <!-- editeur pour le cours/!-->
 <script>
   $('#course').summernote({
-    placeholder: 'Le contenu du Renforcément ici ...',
+    placeholder: 'Le contenu du Cours ...',
       tabsize: 2,
       height: 200,
       minHeight: null,             // set minimum height of editor
@@ -23,6 +23,30 @@
 <!-- editeur pour le recrutement/!-->
 <script>
   $('#recrutement').summernote({
+    placeholder: 'Description Du Poste ...',
+      tabsize: 2,
+      height: 200,
+      minHeight: null,             // set minimum height of editor
+      maxHeight: null,             // set maximum height of editor
+      focus: true,                 // set focus to editable area after initializing summernote
+      toolbar: [
+          ['font', ['bold', 'underline', 'clear']],
+          ['fontsize', ['fontsize']],
+          ['para', ['ul', 'ol', 'paragraph']],
+          ['color', ['color']],
+          ['inser', ['link', 'picture']],
+          ['view', ['fullscreen']]
+
+        ],
+      codeviewFilter: false,
+      codeviewIframeFilter: true
+      });
+
+</script>
+
+<!-- editeur pour le recrutement/!-->
+<script>
+  $('#DirectBook').summernote({
     placeholder: 'Description Du Poste ...',
       tabsize: 2,
       height: 200,

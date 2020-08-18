@@ -1,0 +1,44 @@
+
+<div class="container">
+<div class="row">
+  <!-- Profil DirectBook/!-->
+  <div class="col-12 col-md-2 col-lg-2">
+    <div class="font-bold  mt-16">
+      <div class="card m-2">
+        <p>IMG</p>
+        <p>Nom</p>
+        <p>Prof de Math Au X</p>
+        <p>Petit resumé</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-md-6 col-lg-6">
+    <!-- meta data book/!-->
+     <%= link_to 'Modifier', edit_book_path(@book) %> |
+      <%= link_to 'Back', books_path %> | <%= link_to 'Modifier', edit_book_path(@book) %> |
+      <%= link_to 'Back', books_path %>
+    <div class="font-bold text-2xl">
+      <%= @book.title %>
+    </div>
+    <!-- Auteur
+          Lire par 500
+          Vote Positif 500
+      /!-->
+      <%= link_to 'Modifier', edit_book_path(@book) %> |
+      <%= link_to 'Back', books_path %> | <%= link_to 'Modifier', edit_book_path(@book) %> |
+      <%= link_to 'Back', books_path %>
+    <div class="card ">
+      <div class="m-2">
+        <%= sanitize(@book.content) %>
+      </div>
+    </div>
+  </div>
+    <!-- Notes et annotations/!-->
+  <div class="col-12 col-md-3 col-lg-3">
+    <div class="card">
+      <p></p>
+    </div>
+  </div>
+  </div>
+</div>
+

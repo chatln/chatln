@@ -1,0 +1,26 @@
+
+
+<%= bootstrap_form_for(@book) do |f| %>
+  <div class="form-inputs">
+      <%= f.text_field :title,
+                         label: 'Titre:',
+                         placeholder:"Ex: Simple, Apprendre assez en Math pour devenir un Héro m" %>
+      <%= f.text_area :content, label: 'Contenu:', id: 'DirectBook'  %>
+      <%= f.text_area :describre, label: 'Résumé:',
+                       placeholder:"Un résumé en 100 mots pour présenter votre livre." %>
+      <%= f.text_field :author,
+                               label:"Nom d'auteur",
+                               placeholder:"Ex: Kam Kara"  %>
+      <%= f.file_field  :cover,
+                             label:"Couverture:",
+                             placeholder:" L'image en .Png ou .Jpeg" %>
+
+      <%= f.text_field :category, label:"Categorie:" %>
+      <%= f.text_field :price, label:"Prix:" %>
+      <%= f. date_field :status, label:"Date de Publication:" %>
+
+    </div>
+      <div class="form-actions">
+        <%= f.submit "Créer votre livre", class: "btn btn-primary" %>
+      </div>
+<% end %>

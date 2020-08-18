@@ -2,7 +2,7 @@ module ApplicationHelper
 
 # Retourner un titre basé sur la page.
   def title
-    base_title = "CHATLN Education"
+    base_title = "CHATLN EDUCATION"
     if @title.nil?
       base_title
     else
