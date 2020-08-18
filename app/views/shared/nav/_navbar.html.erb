@@ -41,16 +41,23 @@
             <% if teach_role(current_user) %>
               <li class="nav-item active">
                 <%= link_to new_course_path, class: "m-links nav-link " do %>
-                 <i class="fa fa-plus-circle" aria-hidden="true"></i>Créer un Cours
+                 <i class="fa fa-plus-circle" aria-hidden="true"></i>Cours
                 <% end %>
               </li>
 
               <li class="nav-item active">
                 <%= link_to new_book_path, class: "m-links nav-link " do %>
-                 <i class="fa fa-book" aria-hidden="true"></i>Créer un Livre
+                 <i class="fa fa-book" aria-hidden="true"></i> Direct Book
                 <% end %>
               </li>
             <% end %>
+              <li class="nav-item active">
+                <%= link_to books_path, class: "m-links nav-link " do %>
+                 <i class="fa fa-book" aria-hidden="true"></i> Bibio-Book
+                <% end %>
+              </li>
+
+
 
              <!-- Sign out /!-->
             <li class="nav-item active">

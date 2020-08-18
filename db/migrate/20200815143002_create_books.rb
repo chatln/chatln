@@ -9,6 +9,7 @@ class CreateBooks < ActiveRecord::Migration[5.2]
       t.string :category
       t.string :price
       t.string :status
+      t.string :slug
 
       t.timestamps
     end

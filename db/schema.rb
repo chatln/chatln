@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2020_08_15_143002) do
     t.string "category"
     t.string "price"
     t.string "status"
+    t.string "slug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
