@@ -5,26 +5,8 @@
   </div>
 
   <div class="col-12 col-md-7 col-lg-7">
-    <!-- session en direct ou pre-session/!-->
-    <div class="card">
-      <div class="card-header bg-white">
-        <!-- Button trigger modal -->
-        <div class="", data-toggle="modal" data-target="#exampleModalLong">
-          <p class="flex">
-            <!-- Avatar user/!-->
-            <img class="w-8 h-8 bg-gray-400 rounded-full">
-            <span class=" ml-2">
-              <%= current_user.username %>
-            </span>
-          </p>
-          <span class="mt-6 font-bold">
-           Voir les Cours en direct
-          </span>
-        </div>
-
-        <%= render "shared/feed/session/lives" %>
-      </div>
-    </div>
+    <!-- Live Sessions/!-->
+    <%= render "shared/feed/session/lives" %>
 
     <!-- feed main/!-->
    <%= render "shared/feed/course/feed_course" %>
